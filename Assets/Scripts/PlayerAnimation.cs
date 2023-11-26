@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour
 {
     private Animator anim;
-    private PlayerMovement player;
+    private PlayerMovement moving;
+    private PlayerJump jumping;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        player = GetComponent<PlayerMovement>();
+        moving = GetComponent<PlayerMovement>();
+        jumping = GetComponent<PlayerJump>();
     }
 
     // Update is called once per frame
@@ -22,12 +24,12 @@ public class PlayerAnimation : MonoBehaviour
 
     private void MoveAnim()
     {
-        anim.SetFloat("VelX", player.moveX);
-        anim.SetFloat("VelY", player.moveZ);
+        anim.SetFloat("VelX", moving.moveX);
+        anim.SetFloat("VelY", moving.moveZ);
     }
     private void JumpAnim()
     {
-        anim.SetBool("Jump", player.jump);
-        anim.SetBool("touchFloor", player.floor);
+        anim.SetBool("Jump", jumping.jump);
+        anim.SetBool("touchFloor", jumping.floor);
     }
 }

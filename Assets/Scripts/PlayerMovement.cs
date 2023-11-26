@@ -15,26 +15,16 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Vector3 direction;
     [SerializeField] private Vector3 moveDir;
 
-    //salto
-    //[SerializeField] public float moveY;
-    [SerializeField] private float jumpForce;
-    [SerializeField] public bool jump; //neseraio para disparar la animacion de salto
-    [SerializeField] public bool floor; //necesario para dispara la animacin de idle
-
-    //otro Script
-    private GravityController grav;
     // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<CharacterController>();
-        grav = GetComponent<GravityController>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Move();
-        //Jump();
     }
 
     private void Move()
@@ -57,32 +47,12 @@ public class PlayerMovement : MonoBehaviour
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             //intaciar la rotacion
             transform.rotation =  Quaternion.Euler(0f, angle, 0f);
-            Jump();
             //instancia el movimiento
             player.Move(moveDir.normalized * speed * Time.deltaTime);
         }
         else
         {
-            Jump();
             player.Move(direction * Time.deltaTime);   
-        }
-    }
-
-    private void Jump()
-    {
-        float fall = grav.fallVelocity;
-        if (player.isGrounded && Input.GetButtonDown("Jump"))
-        {
-            fall = jumpForce;
-            moveDir.y = fall;
-            direction.y = fall;
-            jump = true;
-            floor = false;
-        }
-        else
-        {
-            jump = false;
-            floor = true;
         }
     }
 }
