@@ -23,6 +23,7 @@ public class GravityController : MonoBehaviour
     }
     private void SetGravity()
     {
+        //Vector3 dir = character.Direction;
         if (player.isGrounded)
         {
             fallVelocity = - gravity * Time.deltaTime;

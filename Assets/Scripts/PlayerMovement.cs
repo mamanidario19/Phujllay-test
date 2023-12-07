@@ -6,14 +6,20 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] public CharacterController player;
+    private CharacterController player;
     [SerializeField] private float speed;
+    [SerializeField] private float speedRun;
+    [SerializeField] private float speedDown;
     [SerializeField] private float turnTime;//tiempo de rotacion del personaje
     private float turnVelocity; //velocidad de rotacion
-    [SerializeField] public float moveX;
-    [SerializeField] public float moveZ;
+    private float moveX;
+    public float MoveX { get {return moveX; } set {moveX = value;} }
+    private float moveZ;
+    public float MoveZ { get {return moveZ; } set {moveX = value;} }
     [SerializeField] public Vector3 direction;
+    //public Vector3 Direction { get; set;}
     [SerializeField] private Vector3 moveDir;
+    [SerializeField] private Transform camera;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +30,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
+        Moving();
     }
 
-    private void Move()
+    private void Moving()
     {
         moveX = Input.GetAxisRaw("Horizontal");
         moveZ = Input.GetAxisRaw("Vertical");
@@ -39,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (direction.magnitude >= 0.1f)
         {
             //angulo de movimineto en el eje cartesiano "X" y "Z" - calculo
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
             //suaviza la rotacion del personaje
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnTime);
 
@@ -53,6 +59,14 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             player.Move(direction * Time.deltaTime);   
+        }
+    }
+    private void Runing ()
+    {
+        if (true)
+        {
+            float running = speed + speedRun;
+            player.Move(moveDir.normalized * running * Time.deltaTime);
         }
     }
 }

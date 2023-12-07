@@ -24,8 +24,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void MoveAnim()
     {
-        anim.SetFloat("VelX", moving.moveX);
-        anim.SetFloat("VelY", moving.moveZ);
+        anim.SetFloat("VelX", moving.MoveX);
+        anim.SetFloat("VelY", moving.MoveZ);
     }
     private void JumpAnim()
     {

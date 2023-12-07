@@ -6,7 +6,7 @@ public class PlayerJump : MonoBehaviour {
 
     //otro script
     private CharacterController player;
-    private GravityController grav;
+    //private GravityController grav;
     //salto
     //[SerializeField] public float moveY;
     [SerializeField] private float jumpForce;
@@ -18,20 +18,21 @@ public class PlayerJump : MonoBehaviour {
     private void Start()
     {
         player = GetComponent<CharacterController>();
-        grav = GetComponent<GravityController>();
+       // grav = GetComponent<GravityController>();
     }
 
     private void Update()
     {
         Jump();
+       // Fall();
     }
 
     void Jump()
     {
         moveDirection = new Vector3(0,jumpForce,0);
+
         if (player.isGrounded)
         {
-            floor = true;
             if (Input.GetButtonDown("Jump"))
             {
                 player.Move(moveDirection * Time.deltaTime);
@@ -45,11 +46,25 @@ public class PlayerJump : MonoBehaviour {
                 jump = false;
                 floor = true;
             }
-            
-        }
-        else
+        }        
+    }
+    void Fall ()
+    {
+        if (player.isGrounded!)
         {
             floor = false;
+        } 
+        else 
+        {
+            floor = true;
         }
     }
+
+    /*private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Floor"))
+        {
+            Jump();
+        }
+    }*/
 }
