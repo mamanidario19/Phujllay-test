@@ -9,25 +9,22 @@ public class PlayerMovement : MonoBehaviour
     private CharacterController player;
     [SerializeField] private float speed;
     [SerializeField] private float speedRun;
-    [SerializeField] private float speedDown;
-    [SerializeField] private float turnTime;//tiempo de rotacion del personaje
+    [SerializeField] private float turnTime; //tiempo de rotacion del personaje
+    [SerializeField] private Vector3 direction;
+    [SerializeField] private Vector3 moveDir;
+    [SerializeField] private Transform camera;
     private float turnVelocity; //velocidad de rotacion
     private float moveX;
     public float MoveX { get {return moveX; } set {moveX = value;} }
     private float moveZ;
     public float MoveZ { get {return moveZ; } set {moveX = value;} }
-    [SerializeField] public Vector3 direction;
-    //public Vector3 Direction { get; set;}
-    [SerializeField] private Vector3 moveDir;
-    [SerializeField] private Transform camera;
+    public Vector3 Direction { get; set;}
 
-    // Start is called before the first frame update
     void Start()
     {
         player = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Moving();
@@ -38,23 +35,21 @@ public class PlayerMovement : MonoBehaviour
         moveX = Input.GetAxisRaw("Horizontal");
         moveZ = Input.GetAxisRaw("Vertical");
 
-        //la direccion del movimiento, a donde queremos ir
-        direction = new Vector3 (moveX, 0, moveZ).normalized;
+        direction = new Vector3 (moveX, 0, moveZ).normalized;    //la direccion del movimiento, a donde queremos ir
 
-        // si se esta moviendo
         if (direction.magnitude >= 0.1f)
         {
-            //angulo de movimineto en el eje cartesiano "X" y "Z" - calculo
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;
-            //suaviza la rotacion del personaje
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnTime);
+            
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + camera.eulerAngles.y;//angulo de movimineto en el eje cartesiano "X" y "Z" - calculo
+            
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnTime);//suaviza la rotacion del personaje
 
-            //actualiza la direccion en la que se orienta el
-            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
-            //intaciar la rotacion
-            transform.rotation =  Quaternion.Euler(0f, angle, 0f);
-            //instancia el movimiento
-            player.Move(moveDir.normalized * speed * Time.deltaTime);
+            
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;//actualiza la direccion en la que se orienta el
+            
+            transform.rotation =  Quaternion.Euler(0f, angle, 0f);//intaciar la rotacion
+            
+            player.Move(moveDir.normalized * speed * Time.deltaTime);//instancia el movimiento
         }
         else
         {
