@@ -3,51 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
-
+    private CharacterController player;
     [SerializeField] private float jumpForce;
     [SerializeField] public bool jump; //neseraio para disparar la animacion de salto
     [SerializeField] public bool floor; //necesario para dispara la animacin de idle
-    private Vector3 moveDirection;
-    private CharacterController player; // otro script
-   
-    private void Start()
-    {
+    
+    private void Start() {
         player = GetComponent<CharacterController>();
-       // grav = GetComponent<GravityController>();
     }
-
-    private void Update()
-    {
+    
+    private void Update() {
         Jump();
-       // Fall();
     }
 
-    void Jump()
-    {
-        if (player.isGrounded && Input.GetButtonDown("Jump"))
-        {
-            moveDirection = new Vector3(0,jumpForce,0);
+    public void Jump() {
+        if (Input.GetButtonDown("Jump")) {
+            Vector3 moveDirection = new Vector3(0,jumpForce,0);
             player.Move(moveDirection * Time.deltaTime);
             jump = true;
             floor = false;
-        }
-        else
-        {
+        } else {
             jump = false;
             floor = true;
         }
     }
-    void Fall ()
-    {
-        if (player.isGrounded!) floor = false;
-        else floor = true;
-    }
-
-    /*private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Floor"))
-        {
-            Jump();
-        }
-    }*/
 }
