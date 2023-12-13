@@ -7,7 +7,7 @@ public class PlayerAnimation : MonoBehaviour
     private Animator anim;
     private PlayerMovement moving;
     private PlayerJump jumping;
-    // Start is called before the first frame update
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -15,7 +15,6 @@ public class PlayerAnimation : MonoBehaviour
         jumping = GetComponent<PlayerJump>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         MoveAnim();
@@ -24,8 +23,8 @@ public class PlayerAnimation : MonoBehaviour
 
     private void MoveAnim()
     {
-        anim.SetFloat("VelX", moving.moveX);
-        anim.SetFloat("VelY", moving.moveZ);
+        anim.SetFloat("VelX", moving.MoveX);
+        anim.SetFloat("VelY", moving.MoveZ);
     }
     private void JumpAnim()
     {

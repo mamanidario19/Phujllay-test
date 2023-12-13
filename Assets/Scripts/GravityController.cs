@@ -3,35 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GravityController : MonoBehaviour
-{
-    private CharacterController player;
-    private PlayerMovement character;
+public class GravityController : MonoBehaviour {
+    
     [SerializeField] private float gravity = 9.8f;
-    [SerializeField] public float fallVelocity;
-    // Start is called before the first frame update
-    void Start()
-    {
+    [SerializeField] private float fallVelocity;
+    private CharacterController player;
+
+    void Start() {
         player = GetComponent<CharacterController>();
-        character = GetComponent<PlayerMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
+    void Update() {
         SetGravity();
     }
-    private void SetGravity()
-    {
-        if (player.isGrounded)
-        {
-            fallVelocity = - gravity * Time.deltaTime;
-            character.direction.y = fallVelocity;
-        }
-        else
-        {
-            fallVelocity -= gravity * Time.deltaTime;
-            character.direction.y = fallVelocity;    
-        }
+
+    private void SetGravity() {
+        Vector3 fall = new Vector3 (0,fallVelocity,0).normalized;
+        if (!player.isGrounded) fallVelocity -= gravity * Time.deltaTime;
+        else    fallVelocity = - gravity * Time.deltaTime;
+        player.Move(fall * Time.deltaTime);
     }
 }
