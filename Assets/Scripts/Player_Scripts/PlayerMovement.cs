@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,9 +9,9 @@ public class PlayerMovement : MonoBehaviour {
     private CharacterController player;
     [SerializeField] private float speed;
     [SerializeField] private float speedRun;
-    [SerializeField] private float turnTime; //tiempo de rotacion del personaje
+    private float turnTime; //tiempo de rotacion del personaje
     [SerializeField] private Transform camera;
-    [SerializeField] private Vector3 moveDir;
+    private Vector3 moveDir;
     private float turnVelocity; //velocidad de rotacion
     private float moveX;
     public float MoveX { get {return moveX; } set {moveX = value;} }

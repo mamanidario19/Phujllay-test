@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class GravityController : MonoBehaviour {
     
-    [SerializeField] private float gravity = 9.8f;
-    [SerializeField] private float fallVelocity;
+    private float gravity = 9.8f;
+    private float fallVelocity;
     private CharacterController player;
 
     void Start() {

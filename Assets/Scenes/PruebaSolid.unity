@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571385, b: 0.30692253, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,8 +319,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpForce: 15
-  jump: 0
-  floor: 0
 --- !u!1 &521505116
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,9 +669,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   speedRun: 2
-  turnTime: 0.2
   camera: {fileID: 1762948121}
-  moveDir: {x: 0, y: 0, z: 0}
 --- !u!143 &852575688
 CharacterController:
   m_ObjectHideFlags: 0
@@ -733,7 +729,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c82084a03cceccf41a1f2e697d1e9b66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 9.8
   fallVelocity: 0
 --- !u!1 &864165678
 GameObject:
@@ -1141,6 +1136,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d0eff0194ef53e740994260a0f93e9b1, type: 3}
       propertyPath: m_Name
       value: Rumi_T_pose
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d0eff0194ef53e740994260a0f93e9b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1772,7 +1771,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3537691842436517710, guid: 506089a90a706eb4c9706e19ddc30cf5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4202904432088290804, guid: 506089a90a706eb4c9706e19ddc30cf5, type: 3}
       propertyPath: m_LocalPosition.x
