@@ -5,18 +5,19 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour {
     private CharacterController player;
     [SerializeField] private float jumpForce;
-    [SerializeField] public bool jump; //neseraio para disparar la animacion de salto
-    [SerializeField] public bool floor; //necesario para dispara la animacin de idle
-    
+    private bool jump; //neseraio para disparar la animacion de salto
+    public bool Jump {get {return jump;} set{jump = value;}}
+    private bool floor; //necesario para dispara la animacin de idle
+    public bool Floor {get {return floor;} set{floor = value;}}
     private void Start() {
         player = GetComponent<CharacterController>();
     }
     
     private void Update() {
-        Jump();
+        Jumping();
     }
 
-    public void Jump() {
+    private void Jumping() {
         if (Input.GetButtonDown("Jump")) {
             Vector3 moveDirection = new Vector3(0,jumpForce,0);
             player.Move(moveDirection * Time.deltaTime);

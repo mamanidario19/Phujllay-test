@@ -28,7 +28,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     private void JumpAnim()
     {
-        anim.SetBool("Jump", jumping.jump);
-        anim.SetBool("touchFloor", jumping.floor);
+        anim.SetBool("Jump", jumping.Jump);
+        anim.SetBool("touchFloor", jumping.Floor);
     }
 }
