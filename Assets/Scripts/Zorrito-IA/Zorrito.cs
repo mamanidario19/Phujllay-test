@@ -10,6 +10,7 @@ public class Zorrito : MonoBehaviour
 
     private EstadoZorro estadoActual;  // Estado actual del zorrito
     private NavMeshAgent navMeshAgent;
+    [SerializeField] private Collider zonaProhibida;
     
 
     private void Start()
@@ -25,6 +26,19 @@ public class Zorrito : MonoBehaviour
     {
         // Actualiza el estado actual del zorrito en cada frame
         estadoActual.Actualizar();
+
+        // Verifica si el zorrito esta dentro de la zona prohibida
+        if (zonaProhibida.bounds.Contains(transform.position))
+        {
+            // Desactiva el componente NavMeshAgent para que el zorrito no se mueva
+            navMeshAgent.enabled = false;
+            // Lanza el evento
+        }
+        else
+        {
+            // Activa el componente NavMeshAgent si el zorrito esta fuera de la zona
+            navMeshAgent.enabled = true;
+        }
     }
 
     // Metodo para cambiar el estado del zorrito

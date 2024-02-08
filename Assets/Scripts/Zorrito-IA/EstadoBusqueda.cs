@@ -19,13 +19,13 @@ public class EstadoBusqueda : EstadoZorro
             }
         } */
         for (int i = 0; i < espiritus.Length; i++)
+    {
+        if (espiritus[i].CompareTag("Spirit"))
         {
-            if (espiritus[i].CompareTag("Spirit"))
-            {
-                RealizarBusquedaExitosa();
-                return;  // Sal del bucle si encuentras al menos un espiritu
-            }
+            RealizarBusquedaExitosa();
+            return;  // Sal del bucle si encuentras al menos un espiritu
         }
+    }
 
         RealizarBusquedaFallida();
     }
