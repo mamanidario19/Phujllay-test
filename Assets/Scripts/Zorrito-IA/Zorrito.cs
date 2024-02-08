@@ -11,7 +11,8 @@ public class Zorrito : MonoBehaviour
     private EstadoZorro estadoActual;  // Estado actual del zorrito
     private NavMeshAgent navMeshAgent;
     [SerializeField] private Collider zonaProhibida;
-    
+    private bool siguiendo = true;
+
 
     private void Start()
     {
@@ -24,15 +25,18 @@ public class Zorrito : MonoBehaviour
 
     private void Update()
     {
-        // Actualiza el estado actual del zorrito en cada frame
-        estadoActual.Actualizar();
+        // Verifica si el zorrito esta siguiendo antes de actualizar su estado
+        if (siguiendo)
+        {
+            // Actualiza el estado actual del zorrito en cada frame
+            estadoActual.Actualizar();
+        }
 
         // Verifica si el zorrito esta dentro de la zona prohibida
-        if (zonaProhibida.bounds.Contains(transform.position))
+        if (siguiendo && zonaProhibida.bounds.Contains(transform.position))
         {
             // Desactiva el componente NavMeshAgent para que el zorrito no se mueva
             navMeshAgent.enabled = false;
-            // Lanza el evento
         }
         else
         {
@@ -54,16 +58,35 @@ public class Zorrito : MonoBehaviour
         if (estadoActual is EstadoSeguimiento)
         {
             CambiarEstado(new EstadoBusqueda());
-            
+
         }
         else if (estadoActual is EstadoLocalizacion)
         {
             Debug.Log("Zorrito: ¡Encontre algo!");
         }
     }
+
+    public void Seguir()
+    {
+        // Cambia el estado de seguimiento del zorrito
+        siguiendo = !siguiendo;
+
+        if (siguiendo)
+        {
+            // Si esta siguiendo, habilita el nav y cambia al estado de seguimiento
+            navMeshAgent.isStopped = false;
+            TransicionarAEstadoSeguimiento();
+        }
+        else
+        {
+            // Si no, para el nav y realiza acciones..
+            navMeshAgent.isStopped = true;
+            Debug.Log("Te espero!");
+        }
+    }
     public void TransicionarAEstadoSeguimiento()
-{
-    CambiarEstado(new EstadoSeguimiento());
-}
-    
+    {
+        CambiarEstado(new EstadoSeguimiento());
+    }
+
 }

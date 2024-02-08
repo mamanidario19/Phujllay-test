@@ -8,6 +8,7 @@ public class PlayerInteraction : MonoBehaviour
     void Update()
     {
         Interaction();
+        Follow();
 
     }
 
@@ -17,6 +18,16 @@ public class PlayerInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             zorrito.Interactuar();
+        }
+
+    }
+
+    private void Follow() {
+
+        // Verifica si se presiona la tecla 'F' para interactuar con el Zorrito
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            zorrito.Seguir();
         }
 
     }
