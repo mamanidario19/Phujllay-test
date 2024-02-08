@@ -30,7 +30,8 @@ public class EstadoSeguimiento : EstadoZorro
             navMeshAgent.SetDestination(posicionObjetivo);
             
             // Establece la velocidad como la velocidad del jugador
-            navMeshAgent.speed = direccion.magnitude * 4.0f; // Aumenta la velocidad
+            navMeshAgent.speed = direccion.magnitude * 10.0f; // Aumenta la velocidad
+            
         }
         else
         {
