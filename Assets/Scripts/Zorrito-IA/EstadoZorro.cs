@@ -15,6 +15,6 @@ public abstract class EstadoZorro
         this.navMeshAgent = navMeshAgent;
     }
 
-    // Metodo para actualizar el estado en cada frame
+    // Metodo para actualizar el estado en cada frames
     public abstract void Actualizar();
 }

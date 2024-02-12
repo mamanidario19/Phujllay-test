@@ -1604,7 +1604,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 337528618}
   zonaProhibida: {fileID: 1438569514}
-  zorritoAnimator: {fileID: 1205509849}
+  siguiendo: 1
+  zorritoAnim: {fileID: 1205509849}
 --- !u!195 &1205509847
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1636,9 +1637,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1205509841}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5349db1609336424bb69dc34cd2b7040, type: 3}
+  m_Script: {fileID: 11500000, guid: dcb93158842d5da47abcf0c9a9e302b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 1205509843}
 --- !u!1 &1207287141 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4858187075962420841, guid: 5f218174189234d489689ce2a747585f, type: 3}
@@ -1966,7 +1968,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619729573}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.31040224, y: -0.65356237, z: 0.33662316, w: 0.6026538}
+  m_LocalRotation: {x: 0.31040227, y: -0.65356237, z: 0.33662313, w: 0.6026538}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2117,7 +2119,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 337528618}
   zonaProhibida: {fileID: 1438569514}
-  zorritoAnimator: {fileID: 0}
+  siguiendo: 1
+  zorritoAnim: {fileID: 0}
 --- !u!1 &1743132533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8550740238724834239, guid: 5f218174189234d489689ce2a747585f, type: 3}

@@ -5,43 +5,37 @@ using UnityEngine.AI;
 
 public class Zorrito : MonoBehaviour
 {
-    [SerializeField]
-    private Transform player;
-
+    [SerializeField] private Transform player;
     private EstadoZorro estadoActual;  // Estado actual del zorrito
     private NavMeshAgent navMeshAgent;
     [SerializeField] private Collider zonaProhibida;
-    private bool siguiendo = true;
+    public bool siguiendo = true;
+    private bool enIdle = false;
+    public ZorritoAnim zorritoAnim;
 
 
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
-
-        // Inicializa el estado del zorrito
-        estadoActual = new EstadoSeguimiento();
+        zorritoAnim = GetComponent<ZorritoAnim>();
+        estadoActual = new EstadoSeguimiento(); // Inicializa el estado del zorrito
         estadoActual.Inicializar(this, player, navMeshAgent);
     }
 
     private void Update()
     {
-        // Verifica si el zorrito esta siguiendo antes de actualizar su estado
-        if (siguiendo)
+        if (siguiendo) // Verifica si el zorrito esta siguiendo antes de actualizar su estado
         {
-            // Actualiza el estado actual del zorrito en cada frame
-            estadoActual.Actualizar();
+            estadoActual.Actualizar(); // Actualiza el estado actual del zorrito en cada frame
         }
 
-        // Verifica si el zorrito esta dentro de la zona prohibida
-        if (siguiendo && zonaProhibida.bounds.Contains(transform.position))
+        if (siguiendo && zonaProhibida.bounds.Contains(transform.position)) // Verifica si el zorrito esta dentro de la zona prohibida
         {
-            // Desactiva el componente NavMeshAgent para que el zorrito no se mueva
-            navMeshAgent.enabled = false;
+            navMeshAgent.enabled = false; // Desactiva el componente NavMeshAgent para que el zorrito no se mueva
         }
         else
         {
-            // Activa el componente NavMeshAgent si el zorrito esta fuera de la zona
-            navMeshAgent.enabled = true;
+            navMeshAgent.enabled = true; // Activa el componente NavMeshAgent si el zorrito esta fuera de la zona
         }
     }
 
@@ -54,11 +48,9 @@ public class Zorrito : MonoBehaviour
 
     public void Interactuar()
     {
-        // Verifica si el estado actual es igual a ES. Y realiza la accion correspondiente
-        if (estadoActual is EstadoSeguimiento)
+        if (estadoActual is EstadoSeguimiento) // Verifica si el estado actual es igual a ES. Y realiza la accion correspondiente
         {
             CambiarEstado(new EstadoBusqueda());
-
         }
         else if (estadoActual is EstadoLocalizacion)
         {
@@ -68,25 +60,32 @@ public class Zorrito : MonoBehaviour
 
     public void Seguir()
     {
-        // Cambia el estado de seguimiento del zorrito
-        siguiendo = !siguiendo;
+        siguiendo = !siguiendo; // Cambia el estado de seguimiento del zorrito
 
         if (siguiendo)
         {
-            // Si esta siguiendo, habilita el nav y cambia al estado de seguimiento
-            navMeshAgent.isStopped = false;
+            navMeshAgent.isStopped = false; // Si esta siguiendo, habilita el nav y cambia al estado de seguimiento
             TransicionarAEstadoSeguimiento();
         }
         else
         {
-            // Si no, para el nav y realiza acciones..
-            navMeshAgent.isStopped = true;
+            navMeshAgent.isStopped = true; // Si no, para el nav y realiza acciones..
             Debug.Log("Te espero!");
+            enIdle = true; // Establece que el zorrito esta en estado de Idle
+            zorritoAnim.Idle();
         }
     }
     public void TransicionarAEstadoSeguimiento()
     {
         CambiarEstado(new EstadoSeguimiento());
+        if (!enIdle)
+        {
+            zorritoAnim.Walk();
+        }
+        else
+        {
+            enIdle = false; // Resetea la variable enIdle
+        }
     }
 
 }

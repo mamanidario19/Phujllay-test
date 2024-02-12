@@ -10,22 +10,15 @@ public class EstadoBusqueda : EstadoZorro
     {
         Collider[] espiritus = Physics.OverlapSphere(navMeshAgent.transform.position, rangoBusqueda, LayerMask.GetMask("Spirit"));
 
-        /* foreach (var espiritu in espiritus)
+
+        for (int i = 0; i < espiritus.Length; i++)
         {
-            if (espiritu.CompareTag("Spirit"))
+            if (espiritus[i].CompareTag("Spirit"))
             {
                 RealizarBusquedaExitosa();
                 return;  // Sal del bucle si encuentras al menos un espiritu
             }
-        } */
-        for (int i = 0; i < espiritus.Length; i++)
-    {
-        if (espiritus[i].CompareTag("Spirit"))
-        {
-            RealizarBusquedaExitosa();
-            return;  // Sal del bucle si encuentras al menos un espiritu
         }
-    }
 
         RealizarBusquedaFallida();
     }
