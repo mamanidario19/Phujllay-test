@@ -18,7 +18,7 @@ public class PlayerJump : MonoBehaviour {
     }
 
     private void Jumping() {
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && player.isGrounded) {
             Vector3 moveDirection = new Vector3(0,jumpForce,0);
             player.Move(moveDirection * Time.deltaTime);
             jump = true;

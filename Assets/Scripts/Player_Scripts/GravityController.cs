@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class GravityController : MonoBehaviour {
     
+    [SerializeField] private float speed;
     private float gravity = 9.8f;
     private float fallVelocity;
     private CharacterController player;
@@ -21,6 +22,6 @@ public class GravityController : MonoBehaviour {
         Vector3 fall = new Vector3 (0,fallVelocity,0).normalized;
         if (!player.isGrounded) fallVelocity -= gravity * Time.deltaTime;
         else    fallVelocity = - gravity * Time.deltaTime;
-        player.Move(fall * Time.deltaTime);
+        player.Move((fall*speed) * Time.deltaTime);
     }
 }
