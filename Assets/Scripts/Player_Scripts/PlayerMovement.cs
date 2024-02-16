@@ -14,9 +14,10 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 moveDir;
     private float turnVelocity; //velocidad de rotacion
     private float moveX;
-    public float MoveX { get {return moveX; } set {moveX = value;} }
     private float moveZ;
-    public float MoveZ { get {return moveZ; } set {moveX = value;} }
+    private float aniMov;
+    public float AniMov { get {return aniMov;} set {aniMov = value;} }
+    
 
     void Start() {
         player = GetComponent<CharacterController>();
@@ -37,15 +38,20 @@ public class PlayerMovement : MonoBehaviour {
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnVelocity, turnTime);//suaviza la rotacion del personaje
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;//actualiza la direccion en la que se orienta el
             transform.rotation =  Quaternion.Euler(0f, angle, 0f);//intaciar la rotacion
-            
+
             player.Move(moveDir.normalized * speed * Time.deltaTime);//instancia el movimiento
+
+            aniMov = 0.5f;
+
             Runing();
-        }
+        } else aniMov = 0;
     }
     private void Runing () {
         if (Input.GetButton("Run")) {
             float running = speed + speedRun;
             player.Move(moveDir.normalized * running * Time.deltaTime);
+
+            aniMov = 1f;
         }
     }
 }

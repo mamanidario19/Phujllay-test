@@ -8,27 +8,18 @@ public class PlayerAnimation : MonoBehaviour
     private PlayerMovement moving;
     private PlayerJump jumping;
 
-    void Start()
-    {
-        anim = GetComponent<Animator>();
+    void Start() {
+        anim = GetComponentInChildren<Animator>();
         moving = GetComponent<PlayerMovement>();
         jumping = GetComponent<PlayerJump>();
     }
 
-    void Update()
-    {
+    void Update() {
         MoveAnim();
-        JumpAnim();
     }
 
-    private void MoveAnim()
-    {
-        anim.SetFloat("VelX", moving.MoveX);
-        anim.SetFloat("VelY", moving.MoveZ);
-    }
-    private void JumpAnim()
-    {
-        anim.SetBool("Jump", jumping.Jump);
-        anim.SetBool("touchFloor", jumping.Floor);
+    private void MoveAnim() {
+        anim.SetFloat("movement", moving.AniMov);
+        anim.SetBool("jump", jumping.AniMov);
     }
 }

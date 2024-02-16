@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour {
     private CharacterController player;
-    [SerializeField] private float jumpForce;
-    private bool jump; //neseraio para disparar la animacion de salto
-    public bool Jump {get {return jump;} set{jump = value;}}
-    private bool floor; //necesario para dispara la animacin de idle
-    public bool Floor {get {return floor;} set{floor = value;}}
+    private Vector3 moveDirection;
+
+    [SerializeField] private float jumpRange;
+    [SerializeField] private float upVel;
+    [SerializeField] private float downVel;
+    private float jumpForce;
+    private float gravity = -9.8f;
+    
+    [SerializeField] private Transform detectaPiso;
+    [SerializeField] private float distancia;
+    [SerializeField] private LayerMask mascaraPiso;
+
+    private bool tocaPiso;
+
+    private bool aniMov;
+    public bool AniMov { get {return aniMov;} set{aniMov = value;} }
     private void Start() {
         player = GetComponent<CharacterController>();
     }
@@ -18,14 +29,17 @@ public class PlayerJump : MonoBehaviour {
     }
 
     private void Jumping() {
-        if (Input.GetButtonDown("Jump") && player.isGrounded) {
-            Vector3 moveDirection = new Vector3(0,jumpForce,0);
-            player.Move(moveDirection * Time.deltaTime);
-            jump = true;
-            floor = false;
-        } else {
-            jump = false;
-            floor = true;
+        tocaPiso = Physics.CheckSphere(detectaPiso.position,distancia,mascaraPiso);
+        moveDirection = new Vector3(0,jumpForce,0);
+
+        if (!tocaPiso) aniMov = true;  //moveDirection.y +=  gravity * Time.deltaTime;
+        else aniMov = false;
+
+        if (Input.GetButtonDown("Jump") && tocaPiso) {
+            jumpForce = Mathf.Sqrt(jumpRange * upVel * gravity);
         }
+        jumpForce += gravity * downVel * Time.deltaTime;
+
+        player.Move(moveDirection * Time.deltaTime);
     }
 }
