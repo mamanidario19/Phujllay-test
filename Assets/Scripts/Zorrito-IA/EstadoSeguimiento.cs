@@ -18,12 +18,14 @@ public class EstadoSeguimiento : EstadoZorro
             posicionObjetivo.y = player.position.y; // Mantiene la misma altura que el jugador
             navMeshAgent.SetDestination(posicionObjetivo); // Establece la posicion objetivo
             navMeshAgent.speed = direccion.magnitude * 10.0f; // Establece la velocidad como la velocidad del jugador
-            zorrito.zorritoAnim.Walk();
+            //zorrito.zorritoAnim.Walk();
+            zorrito.GetZorritoAnim().Walk();
         }
         else
         {
             navMeshAgent.ResetPath(); // Se detiene si ya estas lo suficientemente cerca
-            zorrito.zorritoAnim.Idle();
+            //zorrito.zorritoAnim.Idle();
+            zorrito.GetZorritoAnim().Idle();
         }
     }
 }

@@ -9,33 +9,40 @@ public class Zorrito : MonoBehaviour
     private EstadoZorro estadoActual;  // Estado actual del zorrito
     private NavMeshAgent navMeshAgent;
     [SerializeField] private Collider zonaProhibida;
-    public bool siguiendo = true;
+    //public bool siguiendo = true;
+    private bool Siguiendo { get; set; } = true; //Propiedad auto-implementada privada
     private bool enIdle = false;
-    public ZorritoAnim zorritoAnim;
+    [SerializeField] private ZorritoAnim zorritoAnim;
 
-
+    public ZorritoAnim GetZorritoAnim()
+    {
+        return zorritoAnim;
+    }
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         zorritoAnim = GetComponent<ZorritoAnim>();
-        estadoActual = new EstadoSeguimiento(); // Inicializa el estado del zorrito
+        estadoActual = new EstadoSeguimiento();
         estadoActual.Inicializar(this, player, navMeshAgent);
     }
 
     private void Update()
     {
-        if (siguiendo) // Verifica si el zorrito esta siguiendo antes de actualizar su estado
+
+        if (Siguiendo) // Verifica si el zorrito esta siguiendo antes de actualizar su estado
         {
             estadoActual.Actualizar(); // Actualiza el estado actual del zorrito en cada frame
+
         }
 
-        if (siguiendo && zonaProhibida.bounds.Contains(transform.position)) // Verifica si el zorrito esta dentro de la zona prohibida
+        if (Siguiendo && zonaProhibida.bounds.Contains(transform.position)) // Verifica si el zorrito esta dentro de la zona prohibida
         {
             navMeshAgent.enabled = false; // Desactiva el componente NavMeshAgent para que el zorrito no se mueva
         }
         else
         {
             navMeshAgent.enabled = true; // Activa el componente NavMeshAgent si el zorrito esta fuera de la zona
+
         }
     }
 
@@ -44,6 +51,22 @@ public class Zorrito : MonoBehaviour
     {
         estadoActual = nuevoEstado;
         estadoActual.Inicializar(this, player, navMeshAgent);
+        // Logica p/animacion y la espera
+        StartCoroutine(EsperarCambiarEstado());
+    }
+    private IEnumerator EsperarCambiarEstado()
+    {
+        if (estadoActual is EstadoSeguimiento) // Aanimacion segun el estado actual
+        {
+            zorritoAnim.Walk();
+        }
+        else if (estadoActual is EstadoBusqueda)
+        {
+            zorritoAnim.Search();
+        }
+        yield return new WaitForSeconds(1f); //Pausa el metodo
+        zorritoAnim.IsNotSearch(); // Detiene la animacion de búsqueda
+        enIdle = false; // Restablece si estaba en estado de Idle
     }
 
     public void Interactuar()
@@ -60,12 +83,21 @@ public class Zorrito : MonoBehaviour
 
     public void Seguir()
     {
-        siguiendo = !siguiendo; // Cambia el estado de seguimiento del zorrito
+        if (estadoActual is EstadoBusqueda)
+        {
+            // Detener la busqueda y transicionar al estado actual
+            CambiarEstado(new EstadoSeguimiento());
+            zorritoAnim.Idle(); 
+            return;
+        }
+        Siguiendo = !Siguiendo; // Cambia el estado de seguimiento del zorrito
 
-        if (siguiendo)
+        if (Siguiendo)
         {
             navMeshAgent.isStopped = false; // Si esta siguiendo, habilita el nav y cambia al estado de seguimiento
+
             TransicionarAEstadoSeguimiento();
+
         }
         else
         {
@@ -75,6 +107,7 @@ public class Zorrito : MonoBehaviour
             zorritoAnim.Idle();
         }
     }
+
     public void TransicionarAEstadoSeguimiento()
     {
         CambiarEstado(new EstadoSeguimiento());
