@@ -9,34 +9,29 @@ public class EstadoBusqueda : EstadoZorro
 
     public override void Actualizar()
     {
-        if (!buscando){
-
-            Collider[] espiritus = Physics.OverlapSphere(navMeshAgent.transform.position, rangoBusqueda, LayerMask.GetMask("Spirit"));
-
-        for (int i = 0; i < espiritus.Length; i++)
+        if (!buscando)
         {
-            if (espiritus[i].CompareTag("Spirit"))
+            Collider[] espiritus = Physics.OverlapSphere(navMeshAgent.transform.position, rangoBusqueda, LayerMask.GetMask("Spirit"));
+            for (int i = 0; i < espiritus.Length; i++)
             {
-                RealizarBusquedaExitosa();
-                return;  // Sal del bucle si encuentras al menos un espiritu
+                if (espiritus[i].CompareTag("Spirit"))
+                {
+                    RealizarBusquedaExitosa();
+                    return;  // Sal del bucle si encuentras al menos un espiritu
+                }
             }
+            RealizarBusquedaFallida();
         }
-
-        RealizarBusquedaFallida();
-        }
-        
     }
 
     private void RealizarBusquedaExitosa()
     {
         zorrito.CambiarEstado(new EstadoLocalizacion());
-        
     }
 
     private void RealizarBusquedaFallida()
     {
         zorrito.CambiarEstado(new EstadoSeguimiento());
         Debug.Log("Zorrito: No encontre nada");
-        
     }
 }
