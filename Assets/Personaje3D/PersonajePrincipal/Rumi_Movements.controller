@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Rumi_jump
+  m_Name: Rumi_JUMP
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -1346243045157541961, guid: a7aaf612c48d12b4cb7b6c8c9163a23e, type: 3}
+  m_Motion: {fileID: 3696890337287820257, guid: 7ebdacf7b642f574b9653fc2f343b39d, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -36,7 +36,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 4781951162920444690, guid: a7aaf612c48d12b4cb7b6c8c9163a23e, type: 3}
+    m_Motion: {fileID: 4781951162920444690, guid: 7ebdacf7b642f574b9653fc2f343b39d, type: 3}
     m_Threshold: 0
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -44,7 +44,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: -3653244689128496862, guid: a7aaf612c48d12b4cb7b6c8c9163a23e, type: 3}
+    m_Motion: {fileID: 4594303134292970328, guid: 7ebdacf7b642f574b9653fc2f343b39d, type: 3}
     m_Threshold: 0.5
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -52,7 +52,7 @@ BlendTree:
     m_DirectBlendParameter: Blend
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 1497334651362803060, guid: a7aaf612c48d12b4cb7b6c8c9163a23e, type: 3}
+    m_Motion: {fileID: -4574417121280339507, guid: 7ebdacf7b642f574b9653fc2f343b39d, type: 3}
     m_Threshold: 1
     m_Position: {x: 0, y: 0}
     m_TimeScale: 1
@@ -132,13 +132,13 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: jump
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

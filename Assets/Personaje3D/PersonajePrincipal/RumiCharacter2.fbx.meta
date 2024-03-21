@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a7aaf612c48d12b4cb7b6c8c9163a23e
+guid: 7ebdacf7b642f574b9653fc2f343b39d
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,7 +33,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Rumi_idle
+      name: Rumi_IDLE
       takeName: Armature|ArmatureAction
       internalID: 4781951162920444690
       firstFrame: 14
@@ -62,11 +62,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rumi_walk
+      name: Rumi_WALK
       takeName: Armature|ArmatureAction
-      internalID: -3653244689128496862
-      firstFrame: 126
-      lastFrame: 148
+      internalID: 4594303134292970328
+      firstFrame: 127
+      lastFrame: 149
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -91,9 +91,9 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rumi_run
+      name: Rumi_RUN
       takeName: Armature|ArmatureAction
-      internalID: 1497334651362803060
+      internalID: -4574417121280339507
       firstFrame: 166
       lastFrame: 198
       wrapMode: 0
@@ -120,10 +120,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Rumi_jump
+      name: Rumi_JUMP
       takeName: Armature|ArmatureAction
-      internalID: -1346243045157541961
-      firstFrame: 210
+      internalID: 3696890337287820257
+      firstFrame: 206
       lastFrame: 231
       wrapMode: 0
       orientationOffsetY: 0
@@ -131,7 +131,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

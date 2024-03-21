@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571385, b: 0.30692253, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -681,6 +681,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 934ff46ddecc5874895af87d1d126ab0, type: 3}
       propertyPath: m_Name
       value: Restaurante2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4715378355233610517, guid: 934ff46ddecc5874895af87d1d126ab0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8562407562423627312, guid: 934ff46ddecc5874895af87d1d126ab0, type: 3}
       propertyPath: m_IsActive
