@@ -72,9 +72,7 @@ GameObject:
   m_Component:
   - component: {fileID: 528262215922037773}
   - component: {fileID: 4949247514379482079}
-  - component: {fileID: 4754127515067916967}
-  - component: {fileID: 7388849736753736885}
-  - component: {fileID: 32720397098301492}
+  - component: {fileID: 8777172094377116248}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -126,7 +124,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!114 &4754127515067916967
+--- !u!114 &8777172094377116248
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,44 +133,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 4258152272168304798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 424d8b2f62003644fa04071916c145c5, type: 3}
+  m_Script: {fileID: 11500000, guid: 46c75f406ebca1343804592d9d15e02e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  speedRun: 6
-  camera: {fileID: 0}
---- !u!114 &7388849736753736885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4258152272168304798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b51621c4efafadf4c933e80e7014dba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jumpRange: 5
-  upVel: -2
-  downVel: 3
-  detectaPiso: {fileID: 3859761167102555444}
-  distancia: 0.1
-  mascaraPiso:
-    serializedVersion: 2
-    m_Bits: 72
---- !u!114 &32720397098301492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4258152272168304798}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bf1ad8279791e841899f84c570d69d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  rotationFactorPerFrame: 4
+  runMultiplier: 4
+  walkMultiplier: 1.8
+  cameraTrans: {fileID: 0}
+  maxJumpHeight: 2
+  maxJumpTime: 0.75
 --- !u!1001 &3046862794363103518
 PrefabInstance:
   m_ObjectHideFlags: 0
