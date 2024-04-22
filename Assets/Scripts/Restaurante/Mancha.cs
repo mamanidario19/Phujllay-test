@@ -10,6 +10,10 @@ public class Mancha : MonoBehaviour, IInteractuable
     {
         jugador.AgregarPuntaje(puntos);
 
+        Spot spot = GetComponentInParent<Spot>();
+
+        spot.Activo = false;
+
         Destroy(this.gameObject);
     }
 }

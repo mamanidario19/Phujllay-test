@@ -27,7 +27,9 @@ public class PuntajeJugador : MonoBehaviour
         {
             interactuable.Interactuar(this);
 
-            textoPuntaje.text = "Puntaje: " + puntaje;
+            accion = false;
+
+            textoPuntaje.text = "Puntaje: " + puntaje;            
         }
     }
 

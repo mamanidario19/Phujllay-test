@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class InstanciadorAleatorio : MonoBehaviour
@@ -8,7 +9,7 @@ public class InstanciadorAleatorio : MonoBehaviour
     [SerializeField] private int tiempoRetraso = 5;
     [SerializeField] private int tiempoFinalizacion = 40;
     [SerializeField] private GameObject prefab;
-    [SerializeField] private Transform[] posiciones;
+    [SerializeField] private Spot[] posiciones;
 
     private void Start()
     {
@@ -26,8 +27,32 @@ public class InstanciadorAleatorio : MonoBehaviour
 
         tiempoFinalizacion++;
 
-        Transform spot = posiciones[Random.Range(0, posiciones.Length)];
+        Spot spot = GetSpotLibre();
 
-        Instantiate(prefab, spot.position, prefab.transform.rotation);
+        if (spot != null)
+        {
+            spot.Activo = true;
+
+            GameObject instanciaPrefab = Instantiate(prefab, spot.transform.position, prefab.transform.rotation);
+
+            instanciaPrefab.transform.SetParent(spot.transform);            
+        }
+    }
+
+    private Spot GetSpotLibre()
+    {
+        List<Spot> spotsLibres = new List<Spot>();
+
+        foreach (Spot spot in posiciones)
+        {
+            if (!spot.Activo) spotsLibres.Add(spot);
+        }
+
+        if (spotsLibres.Count > 0)
+        {
+            return spotsLibres[Random.Range(0, spotsLibres.Count)];
+        }
+
+        return null;
     }
 }
