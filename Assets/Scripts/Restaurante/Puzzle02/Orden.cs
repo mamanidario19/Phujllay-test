@@ -1,56 +1,120 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Orden : MonoBehaviour
 {
-    [SerializeField] private List<string> platillos = new List<string>();
+    [SerializeField] private GameObject[] pPlatillos;
+    [SerializeField] private GameObject[] pBebidas;
+    [SerializeField] private Transform[] spotsPlatillos;
+    [SerializeField] private Transform[] spotsBebidas;
+    [SerializeField] private GameObject[] imagenesSpotPlatillos;
+    [SerializeField] private GameObject[] imagenesSpotBebidas;
+    [SerializeField] private GameObject canvasOrden;
+    [SerializeField] private Sprite[] imagenesPlatillos;
+    [SerializeField] private Sprite[] imagenesBebidas;
 
-    [SerializeField] private bool correcta = false;
+    private List<string> nombresItems = new List<string>();
 
-    [SerializeField] private GameObject orden;
-
-    public void VerificarOrden(List<string> platillosPedido)
+    private void Start()
     {
-        correcta = CompararListas(platillos, platillosPedido);
+        GenerarOrden();
 
-        if (correcta)
-        {
-            Debug.Log("ORDEN CORRECTA, GRACIAS");
+        AsignarImagenes();
+    }
 
-            Destroy(gameObject);
-        }
-        else
+    private void GenerarOrden()
+    {
+        CargarOrden(pPlatillos, spotsPlatillos.Length);
+
+        CargarOrden(pBebidas, spotsBebidas.Length);
+    }
+
+    private void CargarOrden(GameObject[] objetos, int valorMaximo)
+    {
+        for (int i = 0; i < valorMaximo; i++)
         {
-            Debug.Log("ORDEN INCORRECTA, TRAEME LO QUE TE PEDI");
+            nombresItems.Add(objetos[ObtenerPosicionAleatoria(objetos.Length)].name);
         }
     }
 
-    private bool CompararListas(List<string> lista1, List<string> lista2)
+    private void AsignarImagenes()
     {
-        if (lista1.Count != lista2.Count) return false;
-
-        for (int i = 0; i < lista1.Count; i++)
+        for (int i = 0; i < imagenesSpotPlatillos.Length; i++)
         {
-            if (lista1[i] != lista2[i]) return false;
+            Image imagen = imagenesSpotPlatillos[i].GetComponent<Image>();
+
+            imagen.sprite = imagenesPlatillos[ObtenerPosicion(imagenesPlatillos, nombresItems[i])];
         }
 
-        return true;
+        for (int i = 0; i < imagenesSpotBebidas.Length; i++)
+        {
+            Image imagen = imagenesSpotBebidas[i].GetComponent<Image>();
+
+            imagen.sprite = imagenesBebidas[ObtenerPosicion(imagenesBebidas, nombresItems[i + imagenesSpotPlatillos.Length])];
+        }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private int ObtenerPosicion(Sprite[] imagenes, string nombre)
     {
-        if (other.gameObject.CompareTag("Player"))
+        for(int i = 0;i < imagenes.Length;i++)
         {
-            orden.SetActive(true);
+            if (imagenes[i].name == nombre) return i;
+        }
+
+        return -1;
+    }
+
+    private int ObtenerPosicionAleatoria(int valorMaximo)
+    {
+        return UnityEngine.Random.Range(0, valorMaximo);
+    } 
+    
+    // INSTANCIA DE PLATILLOS
+    public void ColocarPlatillos(int[] indicePlatillos, int[] indiceBebidas)
+    {
+        for(int i = 0; i < spotsPlatillos.Length; i++)
+        {
+            InstanciarObjeto(pPlatillos[indicePlatillos[i]], spotsPlatillos[i]);
+        }
+
+        for (int i = 0; i < spotsBebidas.Length; i++)
+        {
+            InstanciarObjeto(pBebidas[indiceBebidas[i]], spotsBebidas[i]);
+        }
+    }
+
+    private void InstanciarObjeto(GameObject objeto, Transform posicion)
+    {
+        GameObject instancia = Instantiate(objeto, posicion.position, posicion.rotation);
+
+        instancia.transform.SetParent(posicion);
+    }
+
+    // CANVAS
+    public void ActivarCanvas()
+    {
+        canvasOrden.SetActive(!canvasOrden.activeSelf);
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ActivarCanvas();
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if(other.gameObject.CompareTag("Player"))
         {
-            orden.SetActive(false);
-        }        
+            canvasOrden.SetActive(false);
+        }
     }
 }

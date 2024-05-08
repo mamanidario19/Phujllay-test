@@ -12,8 +12,6 @@ public class Mancha : MonoBehaviour, IInteractuable
 
         Spot spot = GetComponentInParent<Spot>();
 
-        spot.Activo = false;
-
         Destroy(this.gameObject);
     }
 }

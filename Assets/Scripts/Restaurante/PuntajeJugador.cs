@@ -8,6 +8,11 @@ public class PuntajeJugador : MonoBehaviour
 {
     [SerializeField] private int puntaje = 0;
     [SerializeField] private TextMeshProUGUI textoPuntaje;
+    [SerializeField] private float tiempoPresionado = 0f;
+    [SerializeField] private float tiempoMaximo = 1f;
+
+    [SerializeField] private GameObject canvasBarra;
+    [SerializeField] private Image barraCarga;
 
     private IInteractuable interactuable;
     private bool accion;
@@ -23,19 +28,43 @@ public class PuntajeJugador : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && accion)
+        if (Input.GetKey(KeyCode.E) && accion)
         {
-            interactuable.Interactuar(this);
+            tiempoPresionado += Time.deltaTime;
 
-            accion = false;
+            canvasBarra.SetActive(true);            
 
-            textoPuntaje.text = "Puntaje: " + puntaje;            
+            ActualizarBarraCarga();
+
+            if (tiempoPresionado >= tiempoMaximo)
+            {
+                interactuable.Interactuar(this);
+
+                accion = false;
+
+                textoPuntaje.text = "Puntaje: " + puntaje;
+
+                tiempoPresionado = 0f;
+            }
+        }
+        else
+        {
+            tiempoPresionado = 0f;
+
+            canvasBarra.SetActive(false);
         }
     }
 
     public void AgregarPuntaje(int puntos)
     {
         puntaje += puntos;
+    }
+
+    private void ActualizarBarraCarga()
+    {
+        float proporcionLlenado = Mathf.Clamp(tiempoPresionado / tiempoMaximo, 0f, 1f);
+
+        barraCarga.fillAmount = proporcionLlenado;
     }
 
     private void OnTriggerEnter(Collider other)
