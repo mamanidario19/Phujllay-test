@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Floor
+  - ObjetoRevelable
+  - Rock
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - MaterialLayer
   - Water
   - UI
   - 
