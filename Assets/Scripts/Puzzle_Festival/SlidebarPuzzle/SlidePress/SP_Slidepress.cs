@@ -11,7 +11,8 @@ public class SP_Slidepress : MonoBehaviour
     private bool buttonPress;
     [SerializeField] private KeyCode button;
     //Contador
-    private float addPoint=2, restPoint=1;
+    private float addPoint=2, restPoint=1, point;
+    public float Point { get { return point; } set { point = value; } }
     [SerializeField] private float count;
     private void Update() {
         PointMovement();

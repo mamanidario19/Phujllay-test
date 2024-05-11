@@ -5,7 +5,7 @@ using UnityEngine;
 public class MP_Manager : MonoBehaviour
 {
     private bool starPlay;
-    [SerializeField] MP_BeatScroll beatScroll;
+    [SerializeField]private MP_BeatScroll beatScroll;
     [SerializeField] private int currentScore;
     [SerializeField] private int scorePerNote = 1;
     public static MP_Manager instance;
@@ -17,11 +17,13 @@ public class MP_Manager : MonoBehaviour
         StartPuzzle();   
     }
     void StartPuzzle(){
-        if(!starPlay){
-            starPlay = true;
-            beatScroll.Started=true;
-
+        if (Input.anyKeyDown){
+            if(!starPlay){
+                starPlay = true;
+                beatScroll.Started=true;
+            }
         }
+        
     }
     public void NoteHit(){
         currentScore+=scorePerNote;
