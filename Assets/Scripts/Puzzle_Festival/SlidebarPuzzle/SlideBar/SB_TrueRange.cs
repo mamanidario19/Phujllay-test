@@ -7,15 +7,8 @@ public class SB_TrueRange : MonoBehaviour
     private float posY;
     public float PosY { get { return posY;} set { posY = value; } }
     private Vector3 posRange;
-    [SerializeField] private SB_Slidebar slidebar;
-    private void Start() {
+    private void Awake() {
         SetupVariables();
-    }
-    private void Update() {
-        if (slidebar.InTune) {
-            SetupVariables();
-            //slidebar.InTune = false;
-        }
     }
     public void SetupVariables () {
         posY = Random.Range(0f,3f);

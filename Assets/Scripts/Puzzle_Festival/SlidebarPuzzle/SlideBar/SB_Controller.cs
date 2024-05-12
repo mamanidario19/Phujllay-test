@@ -5,8 +5,9 @@ using UnityEngine;
 public class SB_Controller : MonoBehaviour
 {
     [SerializeField] private int numCord;
-    [SerializeField] private int count = 0;
+    private int count = 0;
     [SerializeField] private SB_Slidebar slidebar;
+    [SerializeField] private GameObject player, cameraPuzzle;
     //GET - SET
     public int Cord { get { return numCord; } }
     public int Count { get { return count; } set { count = value; } }
@@ -21,5 +22,9 @@ public class SB_Controller : MonoBehaviour
     private void Win() {
         slidebar.Vel = 0;
         Debug.Log("WIIIIIIIN");
+        player.SetActive(true);
+        cameraPuzzle.SetActive(false);
+        this.gameObject.SetActive(false);
+
     }
 }

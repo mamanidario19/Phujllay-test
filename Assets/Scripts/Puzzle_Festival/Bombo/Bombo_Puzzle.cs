@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Bombo_Puzzle : MonoBehaviour
 {
-    [SerializeField]private List<GameObject> bomboSecuence;
-    private List<GameObject> bomboList;
+    [SerializeField] private GameObject piece;
+    [SerializeField] private List<GameObject> bomboSecuence;
+    private List<GameObject> bomboList = new List<GameObject>();
 
     private void OnTriggerEnter(Collider other) {
         if (bomboSecuence.Contains(other.gameObject))
@@ -19,7 +20,9 @@ public class Bombo_Puzzle : MonoBehaviour
                 {
                     if (bomboList.Count == bomboSecuence.Count)
                     {
-                        Win();
+                        piece.SetActive(true);
+                        Debug.Log("WIIIIN");
+                        //Win();
                     }                    
                 } else {
                     bomboList.Clear();
@@ -27,7 +30,7 @@ public class Bombo_Puzzle : MonoBehaviour
             }
         }
     }
-    private void Win(){
-        Debug.Log("win");
-    }
+    /*private void Win(){
+        Debug.Log("WWIIIIIN");
+    }*/
 }

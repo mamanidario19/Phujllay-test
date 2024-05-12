@@ -16,6 +16,10 @@ public class MP_ButtonController : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other) {
         if (other.tag == "MP_ButtonActive") isPressed=true;
+        if (other.tag == "MP_Destroy") {
+            gameObject.SetActive(false);
+            //MP_Manager.instance.NoteMissed();
+        }
     }
     private void OnTriggerExit(Collider other) {
         if (other.tag == "MP_ButtonActive") {

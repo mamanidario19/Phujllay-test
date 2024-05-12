@@ -7,6 +7,9 @@ TagManager:
   - Floor
   - Range
   - MP_ButtonActive
+  - FestivalPuzzle
+  - MP_Destroy
+  - MP_Win
   layers:
   - Default
   - TransparentFX
