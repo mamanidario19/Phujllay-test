@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a30c67e2828ebf408aeec34c0d72399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  comensal: {fileID: 2171039748660577134, guid: 570fdf7dcb6216941981e4f43168dcfe, type: 3}
+  comensal: {fileID: 2466367244021405188, guid: 0b1e7c5ee8a340d4792c4efceedff4c7, type: 3}
   posiciones:
   - {fileID: 942897743888992752}
   - {fileID: 3965112770398707375}

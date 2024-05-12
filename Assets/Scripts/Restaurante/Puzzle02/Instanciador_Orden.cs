@@ -17,6 +17,8 @@ public class Instanciador_Orden : MonoBehaviour
 
     private void Instanciar(Transform posicion)
     {
-        Instantiate(pOrden, posicion.position, posicion.rotation);
+        GameObject instancia = Instantiate(pOrden, posicion.position, posicion.rotation);
+
+        instancia.transform.SetParent(posicion);
     }
 }

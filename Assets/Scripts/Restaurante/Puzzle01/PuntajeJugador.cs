@@ -19,7 +19,7 @@ public class PuntajeJugador : MonoBehaviour
 
     private void Start()
     {
-        textoPuntaje = GameObject.Find("Canvas/TPuntaje").GetComponent<TextMeshProUGUI>();
+        //textoPuntaje = GameObject.Find("Canvas/TPuntaje").GetComponent<TextMeshProUGUI>();
 
         textoPuntaje.text = "Puntaje: " + puntaje;
 
@@ -42,7 +42,7 @@ public class PuntajeJugador : MonoBehaviour
 
                 accion = false;
 
-                textoPuntaje.text = "Puntaje: " + puntaje;
+                //textoPuntaje.text = "Puntaje: " + puntaje;
 
                 tiempoPresionado = 0f;
             }
