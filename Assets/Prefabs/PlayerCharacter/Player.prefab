@@ -96,6 +96,7 @@ Transform:
   - {fileID: 3297225283238661877}
   - {fileID: 390231895996787320}
   - {fileID: 3859761167102555444}
+  - {fileID: 7737264902953033050}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &4949247514379482079
@@ -142,6 +143,37 @@ MonoBehaviour:
   cameraTrans: {fileID: 0}
   maxJumpHeight: 2
   maxJumpTime: 0.75
+--- !u!1 &8075702533134816615
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7737264902953033050}
+  m_Layer: 0
+  m_Name: Posicion_Transporte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7737264902953033050
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075702533134816615}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528262215922037773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3046862794363103518
 PrefabInstance:
   m_ObjectHideFlags: 0
