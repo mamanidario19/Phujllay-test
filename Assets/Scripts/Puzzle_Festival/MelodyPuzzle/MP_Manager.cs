@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MP_Manager : MonoBehaviour
 {
+    [SerializeField] private AudioSource audioInstrumental, audioMelodyChar;
     private bool starPlay;
     [SerializeField]private MP_BeatScroll beatScroll;
     [SerializeField] private int currentScore;
@@ -17,6 +18,8 @@ public class MP_Manager : MonoBehaviour
 
     private void Start() {
         instance = this;
+        /*audioInstrumental= GetComponent<AudioSource>();
+        audioMelodyChar = GetComponent<AudioSource>();*/
     }
     private void Update() {
         StartPuzzle();   
@@ -27,14 +30,18 @@ public class MP_Manager : MonoBehaviour
                 starPlay = true;
                 beatScroll.Started=true;
             }
+            audioInstrumental.Play();
+            audioMelodyChar.Play();
         }
         
     }
     public void NoteHit(){
         currentScore+=scorePerNote;
+        audioMelodyChar.mute = false;
     }
     public void NoteMissed(){
         badScore-=scorePerNote;
+        audioMelodyChar.mute = true;
         Debug.Log("Missed");
         //currentScore-=scorePerNote;
     }
