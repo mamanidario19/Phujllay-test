@@ -25,6 +25,6 @@ public class ChangeCloudDestination : MonoBehaviour
 
     public void ChangeToHomeLocation()
     {
-        destiny.transform.position = new Vector3(0f, 15f, 0f);
+        destiny.transform.position = new Vector3(0f, 40f, 0f);
     }
 }
