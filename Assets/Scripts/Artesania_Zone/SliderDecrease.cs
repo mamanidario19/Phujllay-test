@@ -14,6 +14,9 @@ public class SliderDecrease : MonoBehaviour
     private float directionMultiplier = 1f; // Multiplicador de direccion
     private float nextDirectionChangeTime; // Tiempo para el proximo cambio de direccion
 
+    public bool isActive = false; // Bandera para activar o desactivar el comportamiento
+
+
     void Start()
     {
         // Inicializar la velocidad de disminución y el tiempo para el proximo cambio de direccion
@@ -23,21 +26,25 @@ public class SliderDecrease : MonoBehaviour
 
     void Update()
     {
-        // Disminuir o aumentar el valor del Slider segun la direccion
-        slider.value += currentDecreaseSpeed * Time.deltaTime * directionMultiplier;
-
-        // Verificar límites y cambiar la direccion si es necesario
-        if (slider.value <= minValue || slider.value >= slider.maxValue)
+      if (isActive) // Verificar si la bandera está activa
         {
-            Debug.Log("Perdiste");
-        }
+            // Disminuir o aumentar el valor del Slider según la dirección
+            slider.value += currentDecreaseSpeed * Time.deltaTime * directionMultiplier;
 
-        // Verificar si es momento de cambiar la direccion
-        if (Time.time >= nextDirectionChangeTime)
-        {
-            ChangeSpeedAndDirection(); // Cambiar la velocidad y la direccion
-            // Actualizar el tiempo para el proximo cambio
-            nextDirectionChangeTime = Time.time + Random.Range(minDirectionChangeInterval, maxDirectionChangeInterval); // Actualizar el tiempo para el proximo cambio
+            // Verificar límites y cambiar la dirección si es necesario
+            if (slider.value <= minValue || slider.value >= slider.maxValue)
+            {
+                Debug.Log("Perdiste");
+                isActive = false;
+            }
+
+            // Verificar si es momento de cambiar la dirección
+            if (Time.time >= nextDirectionChangeTime)
+            {
+                ChangeSpeedAndDirection(); // Cambiar la velocidad y la dirección
+                // Actualizar el tiempo para el próximo cambio
+                nextDirectionChangeTime = Time.time + Random.Range(minDirectionChangeInterval, maxDirectionChangeInterval);
+            }
         }
     }
 

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Tapa1
   m_EditorClassIdentifier: 
   objectID: 11
-  objectPrefab: {fileID: 4451208506530794661, guid: 0ef541aff3044e2439dad176a867fbc8, type: 3}
+  objectPrefab: {fileID: 6329122724324758648, guid: 7a1b0015aad728e4584d2de01a40573b, type: 3}
   icon: {fileID: 21300000, guid: 773eda39476724b47bc1c241bc7c8375, type: 3}
   objectName: Tapa1

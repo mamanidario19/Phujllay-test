@@ -15,4 +15,5 @@ MonoBehaviour:
   tapaType: Tapa1
   cuerpoType: Cuerpo1
   baseType: Base1
-  icon: {fileID: 21300000, guid: d8001d660699a774790b1380b4b431d2, type: 3}
+  icon: {fileID: 21300000, guid: 2e1d0a8ab7273fc4d9a384f6c95ea595, type: 3}
+  modelFinished: {fileID: 0}

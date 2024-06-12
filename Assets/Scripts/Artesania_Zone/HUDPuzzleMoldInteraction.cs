@@ -5,6 +5,10 @@ using UnityEngine;
 public class HUDPuzzleMoldInteraction : MonoBehaviour
 {
     [SerializeField] GameObject _HUDPuzleMold;
+    public SliderDecrease sliderDecrease; // Referencia al script SliderDecrease
+    [SerializeField] GameObject ceramicaAnimation;
+    [SerializeField] GameObject Character;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -12,6 +16,11 @@ public class HUDPuzzleMoldInteraction : MonoBehaviour
         {
             // Disparar evento
             InteractOn();
+             // Activar la bandera isActive en SliderDecrease
+            sliderDecrease.isActive = true;
+            ceramicaAnimation.SetActive(true);
+            Character.SetActive(false);
+
         }
     }
       private void OnTriggerExit(Collider other)
@@ -20,6 +29,11 @@ public class HUDPuzzleMoldInteraction : MonoBehaviour
         {
             // Disparar evento
             InteractOff();
+            // Desactivar la bandera isActive en SliderDecrease
+            sliderDecrease.isActive = false;
+            ceramicaAnimation.SetActive(false);
+            Character.SetActive(true);
+
         }
     }
 

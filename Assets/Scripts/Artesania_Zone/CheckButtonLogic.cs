@@ -13,6 +13,7 @@ public class CheckButtonLogic : MonoBehaviour
     private int currentPredefinedIndex = 0; // Índice actual del objeto predefinido
 
     public Image predefinedObjectImage; // Referencia al componente Image que mostrará la imagen del objeto predefinido
+    public ObjectCounter objectCounter;
 
     private void Start()
     {
@@ -31,7 +32,7 @@ public class CheckButtonLogic : MonoBehaviour
             nameBottomChild == predefinedObjects[currentPredefinedIndex].baseType + "(Clone)")
         {
             Debug.Log("Todos los objetos coinciden con el objeto predefinido actual.");
-
+            objectCounter.ObjectAssembled();
             // Mover al siguiente objeto predefinido solo si todos coinciden
             MoveToNextPredefinedObject();
             UpdatePredefinedObjectImage();
@@ -67,4 +68,5 @@ public class CheckButtonLogic : MonoBehaviour
     {
         predefinedObjectImage.sprite = predefinedObjects[currentPredefinedIndex].icon;
     }
+
 }
