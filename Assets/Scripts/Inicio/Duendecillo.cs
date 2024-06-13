@@ -6,6 +6,8 @@ public class Duendecillo : MonoBehaviour
 {
     [SerializeField] private Transform[] puntos;
     [SerializeField] private float velocidad = 5.0f;
+    [SerializeField] private float velocidadRotacion = 720.0f;
+    [SerializeField] private Animator animator;
 
     private int indice = 0;
     private bool moviendose = false;
@@ -25,6 +27,8 @@ public class Duendecillo : MonoBehaviour
             indice++;
 
             moviendose = true;
+
+            Correr();
         }
     }
 
@@ -32,12 +36,35 @@ public class Duendecillo : MonoBehaviour
     {
         if (moviendose)
         {
-            transform.position = Vector3.MoveTowards(transform.position, puntos[indice].position, velocidad * Time.deltaTime);
+            Vector3 direccion = puntos[indice].position - transform.position;
+
+            Vector3 nuevaPosicion = Vector3.MoveTowards(transform.position, puntos[indice].position, velocidad * Time.deltaTime);
+
+            if (direccion != Vector3.zero)
+            {
+                Quaternion rotacionDestino = Quaternion.LookRotation(direccion);
+
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, rotacionDestino, velocidadRotacion * Time.deltaTime);
+            }
+
+            transform.position = nuevaPosicion;
 
             if (transform.position == puntos[indice].position)
             {
                 moviendose = false;
+
+                Idle();
             }
         }
+    }
+
+    private void Correr()
+    {
+        animator.SetBool("corriendo?", true);
+    }
+
+    private void Idle()
+    {
+        animator.SetBool("corriendo?", false);
     }
 }

@@ -31,11 +31,98 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: Armature|ArmatureAction
+      internalID: 4781951162920444690
+      firstFrame: 57
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: run
+      takeName: Armature|ArmatureAction
+      internalID: -1246731831762816583
+      firstFrame: 0
+      lastFrame: 17
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: jump
+      takeName: Armature|ArmatureAction
+      internalID: 4594303134292970328
+      firstFrame: 25
+      lastFrame: 57
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -82,7 +169,147 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: duendecito(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Chulo
+      parentName: duendecito(Clone)
+      position: {x: 0.006797379, y: 1.4932383, z: -0.015227414}
+      rotation: {x: -0.6329746, y: -0.0009819064, z: -0.001624397, w: 0.7741702}
+      scale: {x: 51.549946, y: 51.54994, z: 51.549942}
+    - name: Armature
+      parentName: duendecito(Clone)
+      position: {x: 0, y: 0.3363809, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 25.63608, y: 25.63608, z: 25.63608}
+    - name: CADERA
+      parentName: Armature
+      position: {x: 7.0064763e-20, y: 0.00031554364, z: 0.0077714226}
+      rotation: {x: 0.7071068, y: 4.180998e-25, z: -3.32882e-25, w: 0.7071068}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
+    - name: TORSO
+      parentName: CADERA
+      position: {x: 2.0324086e-26, y: 0.01, z: -7.4505804e-11}
+      rotation: {x: -0, y: 1.3877788e-17, z: 3.6749132e-10, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: CUELLO
+      parentName: TORSO
+      position: {x: 6.0972526e-11, y: 0.010335936, z: 9.713403e-11}
+      rotation: {x: -4.381433e-17, y: -0.00000011922549, z: 0.0000000013625452, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1}
+    - name: CABEZA
+      parentName: CUELLO
+      position: {x: 9.19681e-11, y: 0.0024905826, z: 2.0190781e-11}
+      rotation: {x: -1.9547942e-16, y: -0, z: -0.0000000016395774, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: L.CABEZA LATERAL
+      parentName: CUELLO
+      position: {x: 9.19681e-11, y: 0.0024905826, z: 2.0190781e-11}
+      rotation: {x: 0.00000024889871, y: -0.00000005256038, z: 0.58783406, w: 0.8089815}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1}
+    - name: L.OREJA
+      parentName: L.CABEZA LATERAL
+      position: {x: -0.0000000027706846, y: 0.017730478, z: -3.72529e-10}
+      rotation: {x: -0.000000030466182, y: 0.0000002010239, z: -0.17746451, w: 0.9841272}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.99999994}
+    - name: R.CABEZA LATERAL
+      parentName: CUELLO
+      position: {x: 9.19681e-11, y: 0.0024905826, z: 2.0190781e-11}
+      rotation: {x: 0.00000010872911, y: 0.00000024546281, z: -0.58783406, w: 0.8089815}
+      scale: {x: 1.0000001, y: 1.0000002, z: 1}
+    - name: R.OREJA
+      parentName: R.CABEZA LATERAL
+      position: {x: 0.0000000011455268, y: 0.01773048, z: 7.799826e-11}
+      rotation: {x: -0.000000021706777, y: -0.00000021307868, z: 0.17746459, w: 0.9841272}
+      scale: {x: 0.9999998, y: 1, z: 0.99999994}
+    - name: L.entrepierna
+      parentName: Armature
+      position: {x: 7.0064725e-20, y: 0.00031554347, z: 0.0077714203}
+      rotation: {x: -0.43773875, y: -0.43773872, z: 0.55532396, w: 0.5553242}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L.muslo
+      parentName: L.entrepierna
+      position: {x: -0, y: 0.009195569, z: 5.122274e-11}
+      rotation: {x: 0.23387569, y: 0.05603183, z: 0.056031846, w: -0.96903205}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: L.pantorrila
+      parentName: L.muslo
+      position: {x: 1.9982344e-10, y: 0.009901812, z: 1.1848199e-10}
+      rotation: {x: 0.11830931, y: 0.04905445, z: 0.062231738, w: 0.98981005}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.9999998}
+    - name: R.entrepierna
+      parentName: Armature
+      position: {x: 7.0064725e-20, y: 0.00031554347, z: 0.0077714203}
+      rotation: {x: 0.43773875, y: -0.43773872, z: 0.55532396, w: -0.5553242}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: R.muslo
+      parentName: R.entrepierna
+      position: {x: -0, y: 0.009195569, z: 5.122274e-11}
+      rotation: {x: -0.2338757, y: 0.0560318, z: 0.05603189, w: 0.96903205}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
+    - name: R.pantorrila
+      parentName: R.muslo
+      position: {x: 6.5699307e-10, y: 0.009901811, z: 0.0000000010311084}
+      rotation: {x: 0.11830929, y: -0.049054384, z: -0.062231738, w: 0.98981}
+      scale: {x: 1, y: 1.0000004, z: 1.0000001}
+    - name: Cuerpo
+      parentName: duendecito(Clone)
+      position: {x: -0.004166126, y: 1.2836981, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 51.549934, y: 51.549934, z: 51.549934}
+    - name: Armature.poncho
+      parentName: duendecito(Clone)
+      position: {x: -0, y: 0.5351048, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 25.63608, y: 25.63608, z: 25.63608}
+    - name: CADERA
+      parentName: Armature.poncho
+      position: {x: 7.0064725e-20, y: 0.00031554347, z: 0.0077714203}
+      rotation: {x: 0.7071068, y: 4.180998e-25, z: -3.32882e-25, w: 0.7071068}
+      scale: {x: 0.99999994, y: 0.9999998, z: 0.9999998}
+    - name: TORSO
+      parentName: CADERA
+      position: {x: 2.042102e-26, y: 0.01, z: -7.4505804e-11}
+      rotation: {x: -0, y: -9.0459404e-11, z: 3.590107e-10, w: 1}
+      scale: {x: 1, y: 1, z: 0.9999998}
+    - name: L.entrepierna
+      parentName: Armature.poncho
+      position: {x: 7.0064725e-20, y: 0.00031554347, z: 0.0077714203}
+      rotation: {x: 0.000000029802322, y: -0.000000059604645, z: 0.70710677, w: 0.7071068}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: L.muslo
+      parentName: L.entrepierna
+      position: {x: -0, y: 0.009195569, z: 5.122274e-11}
+      rotation: {x: 0.70710677, y: -0.00000002980233, z: -0.00000001490116, w: -0.7071068}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: L.pantorrila
+      parentName: L.muslo
+      position: {x: 1.9982352e-10, y: 0.009901812, z: 1.1848199e-10}
+      rotation: {x: -0, y: -0.000000021073431, z: 0.000000021073426, w: 1}
+      scale: {x: 0.9999996, y: 0.9999997, z: 0.9999998}
+    - name: R.entrepierna
+      parentName: Armature.poncho
+      position: {x: 7.0064725e-20, y: 0.00031554347, z: 0.0077714203}
+      rotation: {x: -0.000000029802322, y: -0.000000059604645, z: 0.70710677, w: -0.7071068}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: R.muslo
+      parentName: R.entrepierna
+      position: {x: -0, y: 0.009195569, z: 5.122274e-11}
+      rotation: {x: -0.70710677, y: -0.00000005960465, z: -0.000000044703484, w: 0.7071068}
+      scale: {x: 1.0000004, y: 1.0000002, z: 0.99999994}
+    - name: R.pantorrila
+      parentName: R.muslo
+      position: {x: 6.5699307e-10, y: 0.009901811, z: 0.0000000010311084}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000002}
+    - name: Poncho
+      parentName: duendecito(Clone)
+      position: {x: -0.004166126, y: 1.2836981, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 51.549934, y: 51.549934, z: 51.549934}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -90,7 +317,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.005
+    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
