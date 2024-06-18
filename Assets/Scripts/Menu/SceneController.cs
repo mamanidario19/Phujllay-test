@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,5 +11,9 @@ public class SceneController : MonoBehaviour
     }
     public void ExitAplication(){
         Application.Quit();
+    }
+    public void StopMenuMusic() {
+        MenuMusic.instance.StopMusic();
+        MenuMusic.instance.DestroyAudio();
     }
 }

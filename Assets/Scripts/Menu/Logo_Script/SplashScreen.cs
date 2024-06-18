@@ -7,6 +7,7 @@ using System.Runtime.CompilerServices;
 
 public class SplashScreen : MonoBehaviour
 {
+    [SerializeField] private MenuMusic music;
     [SerializeField] private int scene;
     private Image logoTeam;
     private bool loadFinish;
@@ -20,7 +21,6 @@ public class SplashScreen : MonoBehaviour
 
         logoTeam.color = new Color(logoTeam.color.r, logoTeam.color.g, logoTeam.color.b, 0f);
     }
-
     private void Start() {
         loadFinish = true;
     }
@@ -33,5 +33,8 @@ public class SplashScreen : MonoBehaviour
     }
     public void EndAnimationLogo ( ) {
         endLogo = true;
+    }
+    public void AudioPlay() {
+        music.PlayMusic();
     }
 }
