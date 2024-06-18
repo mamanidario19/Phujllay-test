@@ -170,6 +170,7 @@ Transform:
   - {fileID: 390231895996787320}
   - {fileID: 3859761167102555444}
   - {fileID: 7374344997425490420}
+  - {fileID: 5332856393757976494}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &4949247514379482079
@@ -211,11 +212,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationFactorPerFrame: 4
-  runMultiplier: 4
-  walkMultiplier: 1.8
+  runMultiplier: 5
+  walkMultiplier: 2
   cameraTrans: {fileID: 0}
-  maxJumpHeight: 2
-  maxJumpTime: 0.75
+  maxJumpHeight: 1.5
+  maxJumpTime: 0.5
+--- !u!1 &6709464025211391416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5332856393757976494}
+  m_Layer: 0
+  m_Name: Posicion_Transporte
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5332856393757976494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6709464025211391416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.05, z: 0.4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 528262215922037773}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3036990463396991739
 PrefabInstance:
   m_ObjectHideFlags: 0
