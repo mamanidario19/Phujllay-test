@@ -10,6 +10,8 @@ TagManager:
   - FestivalPuzzle
   - MP_Destroy
   - MP_Win
+  - Note
+  - Bombo
   layers:
   - Default
   - TransparentFX
