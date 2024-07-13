@@ -9,11 +9,11 @@ public class SceneController : MonoBehaviour
     public void SceneChange(int scene){
         SceneManager.LoadScene(scene);
     }
-    public void ExitAplication(){
-        Application.Quit();
-    }
-    public void StopMenuMusic() {
+public void StopMenuMusic() {
         MenuMusic.instance.StopMusic();
         MenuMusic.instance.DestroyAudio();
+    }
+    public void ExitAplication(){
+        Application.Quit();
     }
 }
