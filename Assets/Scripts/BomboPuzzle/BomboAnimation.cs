@@ -29,17 +29,20 @@ public class BomboAnimation : MonoBehaviour
 
     private IEnumerator PlayAnimationsInOrder()
     {
-        foreach (int index in generatePattern.randomIndices)
+        if (generatePattern.correctPatternCount != 5)
         {
-            GameObject objectToAnimate = generatePattern.puzzleObjects[index];
-            Animator animator = objectToAnimate.GetComponent<Animator>();
+            foreach (int index in generatePattern.randomIndices)
+            {
+                GameObject objectToAnimate = generatePattern.puzzleObjects[index];
+                Animator animator = objectToAnimate.GetComponent<Animator>();
 
-            // Asegúrate de tener un trigger en tu Animator llamado "PlayAnimation"
-            animator.SetTrigger("PlayAnimation");
+                // Asegúrate de tener un trigger en tu Animator llamado "PlayAnimation"
+                animator.SetTrigger("PlayAnimation");
 
-            // Espera a que la animación termine antes de continuar con el siguiente objeto
-            // Asegúrate de ajustar la duración según la longitud de tu animación
-            yield return new WaitForSeconds(1.0f);
+                // Espera a que la animación termine antes de continuar con el siguiente objeto
+                // Asegúrate de ajustar la duración según la longitud de tu animación
+                yield return new WaitForSeconds(1.0f);
+            }
         }
     }
 }
