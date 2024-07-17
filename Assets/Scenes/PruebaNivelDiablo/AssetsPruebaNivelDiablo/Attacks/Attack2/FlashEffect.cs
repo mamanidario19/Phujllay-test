@@ -35,7 +35,6 @@ public class FlashEffect : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             CaptureScreen();
-            //StartCoroutine(Flash());
         }
 
         if (Input.GetKeyDown(KeyCode.U))
@@ -77,31 +76,19 @@ public class FlashEffect : MonoBehaviour
         Texture2D screenshotTexture = new Texture2D(Screen.width, Screen.height);
         screenshotTexture.LoadImage(System.IO.File.ReadAllBytes(screenshotPath));
 
-        //// Modifica la textura para saturarla en blanco con menor intensidad
-        //float whiteIntensity = 0.5f; // Ajustar valor de intensidad
-        //for (int x = 0; x < screenshotTexture.width; x++)
-        //{
-        //    for (int y = 0; y < screenshotTexture.height; y++)
-        //    {
-        //        Color pixelColor = screenshotTexture.GetPixel(x, y);
-        //        pixelColor.r = 1f - (1f - pixelColor.r) * whiteIntensity;
-        //        pixelColor.g = 1f - (1f - pixelColor.g) * whiteIntensity;
-        //        pixelColor.b = 1f - (1f - pixelColor.b) * whiteIntensity;
-        //        screenshotTexture.SetPixel(x, y, pixelColor);
-        //    }
-        //}
-
-        // Modifica la textura para saturarla en blanco con menor saturacion
-        float saturation = 0.5f; // Ajustar valor de saturacion
-
-        Color[] pixels = screenshotTexture.GetPixels();
-
-        for (int i = 0; i < pixels.Length; i++)
+        // Modifica la textura para saturarla en blanco con menor intensidad
+        float whiteIntensity = 0.5f; // Ajusta este valor según tus preferencias (0.0 a 1.0)
+        for (int x = 0; x < screenshotTexture.width; x++)
         {
-            pixels[i] = Color.Lerp(Color.white, pixels[i], saturation);
+            for (int y = 0; y < screenshotTexture.height; y++)
+            {
+                Color pixelColor = screenshotTexture.GetPixel(x, y);
+                pixelColor.r = 1f - (1f - pixelColor.r) * whiteIntensity;
+                pixelColor.g = 1f - (1f - pixelColor.g) * whiteIntensity;
+                pixelColor.b = 1f - (1f - pixelColor.b) * whiteIntensity;
+                screenshotTexture.SetPixel(x, y, pixelColor);
+            }
         }
-
-        screenshotTexture.SetPixels(pixels);
         screenshotTexture.Apply(); // Aplica los cambios
 
         // Asigna la textura al Image

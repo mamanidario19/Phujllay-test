@@ -3,12 +3,7 @@ guid: 309df54e17676ab40a54aab7e15f0ac1
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nota_Verde
-    second: {fileID: 2100000, guid: 726dd9599e94fc5498b2d0b41f83dbbf, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

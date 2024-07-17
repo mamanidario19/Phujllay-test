@@ -3,17 +3,7 @@ guid: 2e3c181b9858ba34ca1990c53442f75a
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Nota_Rojo
-    second: {fileID: 2100000, guid: 94a4db0b282b48a42bf841808759a18a, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Tapa
-    second: {fileID: 2100000, guid: 4747a5d232b818d49a69011df031dd8d, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0
