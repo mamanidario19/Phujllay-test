@@ -14,36 +14,43 @@ public class Festival_PuzzlesController : MonoBehaviour
     // GET -SET
     public bool IsPlaying { get { return isPlaying; } set { isPlaying = value; } }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Disparar evento
-            InteractOn();
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                // Disparar evento
+                InteractOn();
+            }
+            
         }
     }
     private void InteractOn()
     {
-        Debug.Log("Entrando al puzzle ");
+        //Debug.Log("Entrando al puzzle ");
         isPlaying = true;
         CameraPuzzleToActivate.SetActive(true);
         player.SetActive(false);
-        puzzle.SetActive(true);
+        //puzzle.SetActive(true);
     }
 
-    /*private void InteractOff()
+    private void InteractOff()
     {
-        Debug.Log("Saliendo del puzzle");
+        //Debug.Log("Saliendo del puzzle");
         isPlaying = false;
         CameraPuzzleToActivate.SetActive(false);
         player.SetActive(true);
-        puzzle.SetActive(false);
+        //puzzle.SetActive(false);
     }
 
     private void Update()
     {
-        
-    }*/
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            InteractOff();
+        }
+    }
     /*
     [SerializeField] private GameObject puzzle;
     [SerializeField] private GameObject player;
