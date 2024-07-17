@@ -18,7 +18,8 @@ public class ZorritoNavMeshController : MonoBehaviour
     public bool waitStatus = false;
     public bool TrackingStatus = false;
     public bool GuideStatus = false;
-    private bool wasWatching = false;
+    public bool MouseTrackingStatus = false;
+    public bool wasWatching = false;
     public bool isSearching = false;
     private Vector3 lastKnownPosition;
     public float searchTimer = 0f;
@@ -41,20 +42,33 @@ public class ZorritoNavMeshController : MonoBehaviour
             waitStatus = true;
             agente.destination = agente.transform.position;
         }
-        if (Input.GetKeyDown(KeyCode.O))
+        else if (Input.GetKeyDown(KeyCode.O))
         {
             waitStatus = false;
             GuideStatus = false;
+            MouseTrackingStatus = false;
+            isSearching = false;
+            zorritoVision.isWatching = true;
             TrackingStatus = true;
         }
         else if (Input.GetKeyDown(KeyCode.P))
         {
             waitStatus = false;
             TrackingStatus = false;
+            MouseTrackingStatus = false;
             GuideStatus = true;
         }
+        else if (Input.GetKeyDown(KeyCode.U))
+        {
+            waitStatus = false;
+            GuideStatus = false;
+            TrackingStatus = false;
+            isSearching = false;
+            zorritoVision.isWatching = true;
+            MouseTrackingStatus = true;
+        }
 
-        if (TrackingStatus == true)
+        if (MouseTrackingStatus == true)
         {
             if (Input.GetMouseButtonDown(1))
             {
@@ -66,29 +80,31 @@ public class ZorritoNavMeshController : MonoBehaviour
             }
             //EL codigo anterior sirve para enviar una ubicacion desde la perspectiva de la camara, y que el personaje se mueva hasta ahi
             //Estilo League Of Legends
+        }
+        if (TrackingStatus == true)
+        {
+            if (zorritoVision.isWatching == true)
+            {
+                wasWatching = true;
+                isSearching = false;
+                agente.isStopped = false;
+                Vector3 direction = (DestinoZorrito.transform.position - agente.transform.position).normalized;
+                float distance = 1f;
+                Vector3 destino = DestinoZorrito.transform.position - direction * distance;
 
-            //if (zorritoVision.isWatching == true)
-            //{
-            //    wasWatching = true;
-            //    isSearching = false;
-            //    agente.isStopped = false;
-            //    Vector3 direction = (DestinoZorrito.transform.position - agente.transform.position).normalized;
-            //    float distance = 1f;
-            //    Vector3 destino = DestinoZorrito.transform.position - direction * distance;
-
-            //    agente.destination = destino;
-            //}
-            //else
-            //{
-            //    if (wasWatching)
-            //    {
-            //        wasWatching = false;
-            //        lastKnownPosition = transform.position;
-            //        Invoke("StopAgent", 3f);
-            //        //Track();
-            //        Invoke("StartSearching", 4f);
-            //    }
-            //}
+                agente.destination = destino;
+            }
+            else
+            {
+                if (wasWatching)
+                {
+                    wasWatching = false;
+                    lastKnownPosition = transform.position;
+                    Invoke("StopAgent", 3f);
+                    //Track();
+                    Invoke("StartSearching", 4f);
+                }
+            }
         }
         else if (GuideStatus == true)
         {
@@ -157,11 +173,7 @@ public class ZorritoNavMeshController : MonoBehaviour
         //    zorritoAnimator.Idle();
         //}
 
-        anim.SetFloat("speedY", speedY, 0.1f, Time.deltaTime);
-
-
-
-        
+        anim.SetFloat("speedY", speedY, 0.1f, Time.deltaTime);        
     }
 
     void StopAgent()
