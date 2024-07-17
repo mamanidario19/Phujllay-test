@@ -6,6 +6,7 @@ using UnityEngine;
 public class MenuController : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera currentCamera;
+    //[SerializeField] private GameObject currentCanvan, targetCanvan;
     void Start()
     {
         currentCamera.Priority++ ;
@@ -15,5 +16,11 @@ public class MenuController : MonoBehaviour
         currentCamera.Priority-- ;
         currentCamera=target;
         currentCamera.Priority++;
+    }
+    public void RunCanvan(GameObject targetCanvan) {
+        targetCanvan.SetActive(true);
+    }
+    public void CloseCanvan(GameObject currentCanvan) {
+        currentCanvan.SetActive(false);
     }
 }
