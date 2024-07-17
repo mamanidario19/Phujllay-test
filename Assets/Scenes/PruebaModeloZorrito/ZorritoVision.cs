@@ -5,6 +5,7 @@ using UnityEngine;
 public class ZorritoVision : MonoBehaviour
 {
     public bool isWatching;
+    public ZorritoNavMeshController zorritoNavMeshController;
     public GameObject MyCharacter;
     private float distanceMaxRayCast = 15.0f;
     // Start is called before the first frame update
@@ -18,7 +19,10 @@ public class ZorritoVision : MonoBehaviour
     {
         Vector3 startPoint = transform.position;
         Vector3 directionRay = MyCharacter.transform.position - startPoint;
+        if (zorritoNavMeshController.GuideStatus)
+        {
 
+        }
         RaycastHit hit;
         if (Physics.Raycast(startPoint, directionRay, out hit, distanceMaxRayCast))
         {
