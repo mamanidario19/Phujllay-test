@@ -8,8 +8,8 @@ public class Mensaje_Mision : MonoBehaviour
     [SerializeField] private Vector2 targetMinAnchor;
     [SerializeField] private Vector2 targetMaxAnchor;
     [SerializeField] private float duracion = 1.0f;
-    [SerializeField] private float espera = 3.0f;
-    [SerializeField] private Mision padre;
+    //[SerializeField] private float espera = 3.0f;
+    [SerializeField] private Mission padre;
 
     void Awake()
     {
@@ -43,27 +43,27 @@ public class Mensaje_Mision : MonoBehaviour
 
         rt.anchorMax = maxAnchor;
 
-        yield return new WaitForSeconds(espera);
+        //yield return new WaitForSeconds(espera);
 
-        transcurrido = 0;
+        //transcurrido = 0;
 
-        while (transcurrido < duracion)
-        {
-            transcurrido += Time.deltaTime;
+        //while (transcurrido < duracion)
+        //{
+        //    transcurrido += Time.deltaTime;
 
-            float tiempo = Mathf.Clamp01(transcurrido / duracion);
+        //    float tiempo = Mathf.Clamp01(transcurrido / duracion);
 
-            rt.anchorMin = Vector2.Lerp(minAnchor, inicialMinAnchor, tiempo);
+        //    rt.anchorMin = Vector2.Lerp(minAnchor, inicialMinAnchor, tiempo);
 
-            rt.anchorMax = Vector2.Lerp(maxAnchor, inicialMaxAnchor, tiempo);
+        //    rt.anchorMax = Vector2.Lerp(maxAnchor, inicialMaxAnchor, tiempo);
 
-            yield return null;
-        }
+        //    yield return null;
+        //}
 
-        rt.anchorMin = inicialMinAnchor;
+        //rt.anchorMin = inicialMinAnchor;
 
-        rt.anchorMax = inicialMaxAnchor;
+        //rt.anchorMax = inicialMaxAnchor;
 
-        padre.Destruir();
+        //padre.Destruir();
     }
 }

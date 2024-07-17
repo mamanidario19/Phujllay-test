@@ -21,14 +21,14 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
     public @PlayerInputs()
     {
         asset = InputActionAsset.FromJson(@"{
-    ""name"": ""PlayerInputs"",
+    ""missionName"": ""PlayerInputs"",
     ""maps"": [
         {
-            ""name"": ""PlayerControls"",
+            ""missionName"": ""PlayerControls"",
             ""id"": ""f9eedcd0-3b00-4205-ab63-86f75938a5a8"",
             ""actions"": [
                 {
-                    ""name"": ""Move"",
+                    ""missionName"": ""Move"",
                     ""type"": ""Value"",
                     ""id"": ""6f0541fa-04f1-4741-9de1-13bcf14cb656"",
                     ""expectedControlType"": ""Vector2"",
@@ -37,7 +37,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Run"",
+                    ""missionName"": ""Run"",
                     ""type"": ""Button"",
                     ""id"": ""6ffc2e99-0ac5-4296-b75f-809e6ec5cf4b"",
                     ""expectedControlType"": ""Button"",
@@ -46,7 +46,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Jump"",
+                    ""missionName"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""89f6746c-fd7e-4a37-8d5c-0480617bd18b"",
                     ""expectedControlType"": ""Button"",
@@ -57,7 +57,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
             ],
             ""bindings"": [
                 {
-                    ""name"": """",
+                    ""missionName"": """",
                     ""id"": ""6ab057f9-f710-41da-b493-31ded5c46c70"",
                     ""path"": ""<Keyboard>/leftShift"",
                     ""interactions"": """",
@@ -68,7 +68,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""missionName"": """",
                     ""id"": ""4ac5fb03-bb84-433c-bbcf-8d71cef9b114"",
                     ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
@@ -79,7 +79,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""missionName"": """",
                     ""id"": ""21046ef7-1c88-49f5-8dd3-0698a6dc721d"",
                     ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
@@ -90,7 +90,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": """",
+                    ""missionName"": """",
                     ""id"": ""475f204b-7d25-4341-a6cb-d64a638a0ef2"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
@@ -101,7 +101,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""2D Vector"",
+                    ""missionName"": ""2D Vector"",
                     ""id"": ""8d4eb22f-14f0-4c63-8c32-96613ca80f6b"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -112,7 +112,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""up"",
+                    ""missionName"": ""up"",
                     ""id"": ""66ce693f-c69c-4ea7-b251-e50006942661"",
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
@@ -123,7 +123,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""down"",
+                    ""missionName"": ""down"",
                     ""id"": ""f8fe0746-b93e-4e41-a90f-c720ec8ae0a3"",
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
@@ -134,7 +134,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""left"",
+                    ""missionName"": ""left"",
                     ""id"": ""8e545a0d-4dc0-400d-a0ed-be50fec6f203"",
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
@@ -145,7 +145,7 @@ public partial class @PlayerInputs: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""right"",
+                    ""missionName"": ""right"",
                     ""id"": ""da8d3e0e-bdec-45d2-b9d9-b3c7cb40c4a4"",
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
