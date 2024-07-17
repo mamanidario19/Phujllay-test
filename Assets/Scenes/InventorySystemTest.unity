@@ -611,7 +611,7 @@ GameObject:
   - component: {fileID: 488653500}
   - component: {fileID: 488653501}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Item01
   m_TagString: itemObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2067,7 +2067,7 @@ GameObject:
   - component: {fileID: 1423192272}
   - component: {fileID: 1423192271}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: Item02
   m_TagString: itemObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3362,8 +3362,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -120.54962, y: -16.385193}
-  m_SizeDelta: {x: -689.1893, y: -301.9918}
+  m_AnchoredPosition: {x: -137.76398, y: 17.800003}
+  m_SizeDelta: {x: -608.9102, y: -301.9918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038838806
 MonoBehaviour:
