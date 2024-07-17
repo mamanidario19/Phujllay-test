@@ -12,6 +12,7 @@ TagManager:
   - MP_Win
   - Note
   - Bombo
+  - itemObject
   layers:
   - Default
   - TransparentFX
