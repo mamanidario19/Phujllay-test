@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
+    path: Assets/Scenes/ArtesaniaZone.unity
+    guid: 050daa2b6f2528a4a88a319e9e0a612f
+  - enabled: 1
     path: Assets/Scenes/Restaurante.unity
     guid: 6ba731329f6a6da4a80b5c576c28d240
   - enabled: 1
