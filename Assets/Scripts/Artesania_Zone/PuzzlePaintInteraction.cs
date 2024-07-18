@@ -4,38 +4,48 @@ using UnityEngine;
 
 public class PuzzlePaintInteraction : MonoBehaviour
 {
-    [SerializeField] GameObject _CameraPuzlePaint;
-    [SerializeField] GameObject _HUDPuzlePaint;
+    [SerializeField] GameObject _CameraPuzzlePaint;
+    [SerializeField] GameObject _HUDPuzzlePaint;
+
+    private bool isPlayerInside = false; // Variable para rastrear si el jugador está dentro del área de interacción
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Disparar evento
-            InteractOn();
+            isPlayerInside = true; // Marcar que el jugador está dentro del área
         }
     }
-      private void OnTriggerExit(Collider other)
+
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Disparar evento
-            InteractOff();
+            isPlayerInside = false; // Marcar que el jugador ha salido del área
+            InteractOffPaint(); // Asegurarse de desactivar la interacción cuando el jugador salga del área
+        }
+    }
+
+    private void Update()
+    {
+        // Verificar si el jugador está dentro del área y presiona la tecla E
+        if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
+        {
+            InteractOn();
         }
     }
 
     private void InteractOn()
     {
         Debug.Log("Interactuando con el objeto");
-        _CameraPuzlePaint.SetActive(true);
-        _HUDPuzlePaint.SetActive(true);
-
+        _CameraPuzzlePaint.SetActive(true);
+        _HUDPuzzlePaint.SetActive(true);
     }
 
-     private void InteractOff()
+    public void InteractOffPaint()
     {
         Debug.Log("Fuera del objeto");
-        _CameraPuzlePaint.SetActive(false);
-        _HUDPuzlePaint.SetActive(false);
+        _CameraPuzzlePaint.SetActive(false);
+        _HUDPuzzlePaint.SetActive(false);
     }
 }

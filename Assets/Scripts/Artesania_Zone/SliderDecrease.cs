@@ -16,17 +16,17 @@ public class SliderDecrease : MonoBehaviour
 
     public bool isActive = false; // Bandera para activar o desactivar el comportamiento
 
+    public HUDPuzzleMoldInteraction hudPuzzleMoldInteraction; // Referencia a HUDPuzzleMoldInteraction
+
 
     void Start()
     {
-        // Inicializar la velocidad de disminución y el tiempo para el proximo cambio de direccion
-        currentDecreaseSpeed = Random.Range(minDecreaseSpeed, maxDecreaseSpeed);
-        nextDirectionChangeTime = Time.time + Random.Range(minDirectionChangeInterval, maxDirectionChangeInterval);
+        InitializeSlider();
     }
 
     void Update()
     {
-      if (isActive) // Verificar si la bandera está activa
+        if (isActive) // Verificar si la bandera está activa
         {
             // Disminuir o aumentar el valor del Slider según la dirección
             slider.value += currentDecreaseSpeed * Time.deltaTime * directionMultiplier;
@@ -36,6 +36,8 @@ public class SliderDecrease : MonoBehaviour
             {
                 Debug.Log("Perdiste");
                 isActive = false;
+                hudPuzzleMoldInteraction.InteractOff(); // Llamar a InteractOff
+
             }
 
             // Verificar si es momento de cambiar la dirección
@@ -54,5 +56,14 @@ public class SliderDecrease : MonoBehaviour
         currentDecreaseSpeed = Random.Range(minDecreaseSpeed, maxDecreaseSpeed);
         // Cambiar la dirección multiplicando por -1 de forma aleatoria
         directionMultiplier = Random.value < 0.5f ? 1f : -1f;
+    }
+
+    public void InitializeSlider()
+    {
+        // Inicializar la velocidad de disminución y el tiempo para el proximo cambio de direccion
+        currentDecreaseSpeed = Random.Range(minDecreaseSpeed, maxDecreaseSpeed);
+        nextDirectionChangeTime = Time.time + Random.Range(minDirectionChangeInterval, maxDirectionChangeInterval);
+        // Poner el slider en el centro
+        slider.value = (slider.maxValue + minValue) / 2f;
     }
 }

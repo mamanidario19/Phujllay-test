@@ -15,8 +15,15 @@ public class CheckButtonLogic : MonoBehaviour
     public Image predefinedObjectImage; // Referencia al componente Image que mostrará la imagen del objeto predefinido
     public ObjectCounter objectCounter;
 
+    public AudioClip successSound; // Sonido para el acierto
+    public AudioClip failureSound; // Sonido para el fallo
+    public AudioClip victorySound; // Sonido para victoria
+    private AudioSource audioSource;
+
+
     private void Start()
     {
+        audioSource = gameObject.AddComponent<AudioSource>();
         UpdatePredefinedObjectImage(); // Actualizar la imagen al inicio
     }
 
@@ -33,6 +40,7 @@ public class CheckButtonLogic : MonoBehaviour
         {
             Debug.Log("Todos los objetos coinciden con el objeto predefinido actual.");
             objectCounter.ObjectAssembled();
+            PlaySound(successSound);
             // Mover al siguiente objeto predefinido solo si todos coinciden
             MoveToNextPredefinedObject();
             UpdatePredefinedObjectImage();
@@ -40,12 +48,14 @@ public class CheckButtonLogic : MonoBehaviour
             if (currentPredefinedIndex >= predefinedObjects.Length-1)
             {
                 // Todos los objetos han sido completados
-            Debug.Log("GANASTE.");
+                PlaySound(victorySound);
+                 Debug.Log("GANASTE.");
             }
         }
         else
         {
             Debug.Log("Algunos objetos no coinciden con el objeto predefinido actual.");
+            PlaySound(failureSound);
         }
     }
 
@@ -67,6 +77,14 @@ public class CheckButtonLogic : MonoBehaviour
     private void UpdatePredefinedObjectImage()
     {
         predefinedObjectImage.sprite = predefinedObjects[currentPredefinedIndex].icon;
+    }
+
+    private void PlaySound(AudioClip clip)
+    {
+        if (clip != null && audioSource != null)
+        {
+            audioSource.PlayOneShot(clip);
+        }
     }
 
 }

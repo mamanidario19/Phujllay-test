@@ -17,10 +17,6 @@ public class FireCompleteSlider : MonoBehaviour
     [SerializeField] GameObject _HUDmoldPuzzle;
     [SerializeField] GameObject _CameraPuzzle;
 
-
-
-
-
     void Update()
     {
         // Verificar si el valor del slider principal esta entre los limites
@@ -39,5 +35,15 @@ public class FireCompleteSlider : MonoBehaviour
                 _CameraPuzzle.SetActive(false);
 
             }
+
+         if (mainSlider.value <= 0 || mainSlider.value >= 1f )
+        {
+            Debug.Log("PERDISTE");
+            _Character.SetActive(true);
+            _CharacterAnimation.SetActive(false);
+            _HUDmoldPuzzle.SetActive(false);
+            _CameraPuzzle.SetActive(false);
+
+        }
     }
 }

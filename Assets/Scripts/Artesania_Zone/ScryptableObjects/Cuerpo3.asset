@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cuerpo3
   m_EditorClassIdentifier: 
   objectID: 23
-  objectPrefab: {fileID: 2256899499243154987, guid: fdc4c087082742743870f56c50567a39, type: 3}
+  objectPrefab: {fileID: 1720658816704113146, guid: 58aa9c3d711029f4f8467120f24d2086, type: 3}
   icon: {fileID: 21300000, guid: 6febf1228e902f34aa80ab24b79e9ee7, type: 3}
   objectName: Cuerpo3

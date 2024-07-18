@@ -9,31 +9,30 @@ public class HUDPuzzleMoldInteraction : MonoBehaviour
     [SerializeField] GameObject ceramicaAnimation;
     [SerializeField] GameObject Character;
 
+    private bool isPlayerInside = false; // Variable para rastrear si el jugador está dentro del área de interacción
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Disparar evento
-            InteractOn();
-             // Activar la bandera isActive en SliderDecrease
-            sliderDecrease.isActive = true;
-            ceramicaAnimation.SetActive(true);
-            Character.SetActive(false);
-
+            isPlayerInside = true; // Marcar que el jugador está dentro del área
         }
     }
-      private void OnTriggerExit(Collider other)
+
+    private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Disparar evento
-            InteractOff();
-            // Desactivar la bandera isActive en SliderDecrease
-            sliderDecrease.isActive = false;
-            ceramicaAnimation.SetActive(false);
-            Character.SetActive(true);
+            isPlayerInside = false; // Marcar que el jugador ha salido del área
+            InteractOff(); // Asegurarse de desactivar la interacción cuando el jugador salga del área
+        }
+    }
 
+    private void Update()
+    {
+        if (isPlayerInside && Input.GetKeyDown(KeyCode.E))
+        {
+            InteractOn();
         }
     }
 
@@ -41,12 +40,18 @@ public class HUDPuzzleMoldInteraction : MonoBehaviour
     {
         Debug.Log("Interactuando con el objeto");
         _HUDPuzleMold.SetActive(true);
-
+        sliderDecrease.isActive = true;
+        sliderDecrease.InitializeSlider(); // Poner el slider en el centro al activar la interacción
+        ceramicaAnimation.SetActive(true);
+        Character.SetActive(false);
     }
 
-     private void InteractOff()
+    public void InteractOff()
     {
         Debug.Log("Fuera del objeto");
         _HUDPuzleMold.SetActive(false);
+        sliderDecrease.isActive = false;
+        ceramicaAnimation.SetActive(false);
+        Character.SetActive(true);
     }
 }

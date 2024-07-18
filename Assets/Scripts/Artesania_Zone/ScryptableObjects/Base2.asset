@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Base2
   m_EditorClassIdentifier: 
   objectID: 32
-  objectPrefab: {fileID: 8127767643794050372, guid: fce8c187f968ad046a5d860097c53e7a, type: 3}
+  objectPrefab: {fileID: 6868435530102942035, guid: 84f7024cab1713d42b0af6f8bff9c154, type: 3}
   icon: {fileID: 21300000, guid: 308ca16a6bb002a46b2c03250fff7b4b, type: 3}
   objectName: Base2
