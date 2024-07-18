@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EndMission : MonoBehaviour
+public class Activador : MonoBehaviour
 {
-    [SerializeField] private GameObject missionToEnd;
+    [SerializeField] private GameObject objectActivate;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            missionToEnd.GetComponent<Mission>().Destruir();
-
-            Destroy(this.gameObject);
+            objectActivate.SetActive(false);
         }
     }
 }

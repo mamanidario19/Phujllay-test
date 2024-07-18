@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Mission : MonoBehaviour
@@ -12,7 +13,17 @@ public class Mission : MonoBehaviour
     [SerializeField] private int progressTotal;
 
     [SerializeField] private GameObject panel;
+    [SerializeField] private TextMeshProUGUI textMission;
+    [SerializeField] private TextMeshProUGUI textDescription;
     [SerializeField] private GameObject previous;
+    [SerializeField] private GameObject later;
+
+    private void Start()
+    {
+        textMission.text = missionName;
+
+        textDescription.text = description;
+    }
 
     public Mission(string name, string description, enum_MissionStatus status, enum_MissionType type, int progressCurrent = 0, int progressTotal = 1)
     {
@@ -72,6 +83,11 @@ public class Mission : MonoBehaviour
             if(previous != null)
             {
                 previous.GetComponent<Mission>().Destruir();
+            }
+
+            if (later != null)
+            {
+                later.SetActive(true);
             }
 
             panel.SetActive(true);

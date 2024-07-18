@@ -14,4 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Restaurante.unity
+    guid: 6ba731329f6a6da4a80b5c576c28d240
+  - enabled: 1
+    path: Assets/Scenes/Festival.unity
+    guid: 8466e2e7d1ce5a14182dfdd60e8ad2e6
+  - enabled: 1
+    path: Assets/Scenes/PruebaNivelDiablo/PruebaNivelDiablo.unity
+    guid: f82bf47a5adc9fa42b901be71c3d131e
   m_configObjects: {}

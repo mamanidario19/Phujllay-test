@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
-  m_fontSizeBase: 16
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -226,8 +226,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14
-  m_fontSizeBase: 14
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -342,6 +342,10 @@ MonoBehaviour:
   progressCurrent: 0
   progressTotal: 0
   panel: {fileID: 5375338402173592647}
+  textMission: {fileID: 3292829413691840619}
+  textDescription: {fileID: 9021453902769735855}
+  previous: {fileID: 0}
+  later: {fileID: 0}
 --- !u!1 &5375338402173592647
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +440,6 @@ MonoBehaviour:
   targetMinAnchor: {x: 0.7, y: 0.8}
   targetMaxAnchor: {x: 1, y: 0.9}
   duracion: 0.5
-  espera: 1
   padre: {fileID: 6777337127819450001}
 --- !u!1 &6657256536739395048
 GameObject:
