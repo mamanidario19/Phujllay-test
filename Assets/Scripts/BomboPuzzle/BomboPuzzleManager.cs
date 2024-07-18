@@ -50,7 +50,7 @@ public class BomboPuzzleManager : MonoBehaviour
             BomboPuzzlePlay();
         }
 
-        if (generatePattern.correctPatternCount >= 5)
+        if (generatePattern.correctPatternCount == 5)
         {
             BomboPuzzleWin();
         }

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12d909d3f5ef9624492b2e5ceef956b1, type: 3}
+  m_Name: PredefinedObject1
+  m_EditorClassIdentifier: 
+  tapaType: Tapa1
+  cuerpoType: Cuerpo1
+  baseType: Base1
+  icon: {fileID: 21300000, guid: 2e1d0a8ab7273fc4d9a384f6c95ea595, type: 3}
+  modelFinished: {fileID: 0}

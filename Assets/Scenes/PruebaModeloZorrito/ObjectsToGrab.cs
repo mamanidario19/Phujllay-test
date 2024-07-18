@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ObjectsToGrab : MonoBehaviour
 {
+    public ZorritoAnimator zorritoAnimator;
+    public ZorritoNavMeshController zorritoNavMeshController;
     public Animator anim;
     public List<GameObject> objectosAgarrables;
     public float radio = 3f;
@@ -23,7 +25,9 @@ public class ObjectsToGrab : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R) && Time.time - tiempoUltimaPresion >= intervaloPresion)
         {
+            anim.ResetTrigger("isIdle");
             anim.SetTrigger("isSniffing");
+            Invoke("InvokeNotSniffing", 4.292f);
             RevelarObjetos();
             tiempoUltimaPresion = Time.time;
         }
@@ -39,6 +43,12 @@ public class ObjectsToGrab : MonoBehaviour
                 //objeto.GetComponent<Renderer>().material.color = colorRevelado;
             }
         }
+    }
+
+    void InvokeNotSniffing()
+    {
+        //zorritoNavMeshController.speedY = 1.1f;
+        zorritoAnimator.anim.SetTrigger("isIdle");
     }
 
     IEnumerator CambiarColorGradualmente(GameObject objeto)
