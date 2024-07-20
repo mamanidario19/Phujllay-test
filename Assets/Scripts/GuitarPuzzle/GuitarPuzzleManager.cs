@@ -49,6 +49,14 @@ public class GuitarPuzzleManager : MonoBehaviour
         }
     }
 
+    public void RestartPuzzleGuitar()
+    {
+        if (authorizePlayPuzzle.thisObjectActive)
+        {
+            StartCoroutine(GuitarPuzzleRestartt());
+        }
+    }
+
     public void GuitarPuzzleGameOver()
     {
         isWin = false;

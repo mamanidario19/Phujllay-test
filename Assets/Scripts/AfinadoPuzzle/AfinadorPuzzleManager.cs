@@ -63,6 +63,16 @@ public class AfinadorPuzzleManager : MonoBehaviour
         }
     }
 
+    public void StartPuzzleAfinador()
+    {
+        if (authorizePlayPuzzle.thisObjectActive)
+        {        
+            numLevel = 1;        
+            isPlaying = true;       
+            ActivateCord();
+        }
+    }
+
     public void AfinadorPuzzlePlay()
     {
         sb_Slidebar.PointMovement();

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BomboPuzzleManager : MonoBehaviour
 {
+    public Festival_PuzzlesController festival_PuzzlesController;
     public AuthorizePlayPuzzle authorizePlayPuzzle; // Referencia a la clase AuthorizePlayPuzzle
     public GeneratePattern generatePattern; // Referencia a la clase GeneratePattern
     public BomboAnimation bomboAnimation; // Referencia a la clase BomboAnimation
@@ -61,6 +62,24 @@ public class BomboPuzzleManager : MonoBehaviour
         }
     }
 
+    public void StartPuzzleBombo()
+    {
+        if (authorizePlayPuzzle.thisObjectActive)
+        {
+            festival_PuzzlesController.numBack = 2;
+            isPlaying = true;
+            aciertos = 0;
+            // Inicializa la lista de objetos y asigna índices
+            generatePattern.InitializeObjectList();
+            generatePattern.AssignIndicesToObjects();
+            // Genera y anima la lista de índices aleatorios
+            generatePattern.GenerateRandomIndicesList();
+            generatePattern.bomboAnimation.StartAnimationSequence();
+            // Inicializa la lista de selección del jugador
+            generatePattern.playerSelectedIndices = new List<int>();
+        }
+    }
+
     public void BomboPuzzlePlay()
     {
 
@@ -97,6 +116,13 @@ public class BomboPuzzleManager : MonoBehaviour
     {
         aciertos--;
         Debug.Log("Bajaste al nivel " + aciertos);
+    }
+
+    public void ReShuffle()
+    {
+        generatePattern.playerSelectedIndices.Clear();
+        generatePattern.Shuffle();
+        bomboAnimation.StartAnimationSequence();
     }
 
     // Método para comparar las dos listas y determinar el resultado

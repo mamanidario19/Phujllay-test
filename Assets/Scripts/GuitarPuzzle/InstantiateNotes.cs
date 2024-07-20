@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class InstantiateNotes : MonoBehaviour
 {
+    public int countPressButtonPlay = 0;
     public AuthorizePlayPuzzle authorizePlayPuzzle; // Referencia a la clase AuthorizePlayPuzzle
+    public GuitarPuzzleManager guitarPuzzleManager; // Referencia a la clase GuitarPuzzleManager
 
     public PlayMusic playMusic;
 
@@ -133,6 +135,32 @@ public class InstantiateNotes : MonoBehaviour
         //    // Prepara para instanciar el próximo objeto
         //    nextSpawnIndex++;
         //}
+    }
+    public void IncrementarContador()
+    {
+        countPressButtonPlay++;
+    }
+
+    public void StartPuzzleGuitar()
+    {
+        if (countPressButtonPlay == 1)
+        {
+            if (authorizePlayPuzzle.thisObjectActive)
+            {
+                startTime = Time.time; // Guarda el momento en que se presionó la tecla
+                isPlaying = true;
+                isSpawning = true;
+                playMusic.PlayMusicGuitar();
+            }
+        }
+        if (countPressButtonPlay >= 2)
+        {
+            if (authorizePlayPuzzle.thisObjectActive)
+            {
+                guitarPuzzleManager.RestartPuzzleGuitar();
+            }
+        }
+
     }
 
     public void Restart()

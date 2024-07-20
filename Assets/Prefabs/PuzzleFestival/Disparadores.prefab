@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8941067881073791145}
   - component: {fileID: 1438285004371257887}
   - component: {fileID: 576036672697236867}
-  - component: {fileID: 8717681121298903256}
   - component: {fileID: 5791204740163132138}
   m_Layer: 0
   m_Name: Interador_Guitar
@@ -107,27 +106,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &8717681121298903256
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254018363940714999}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.5977093
-  m_Center: {x: 0, y: 1.0977093, z: 0}
 --- !u!114 &5791204740163132138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +121,7 @@ MonoBehaviour:
   CameraPuzzleToActivate: {fileID: 0}
   player: {fileID: 0}
   puzzle: {fileID: 0}
+  inCollision: 0
 --- !u!1 &992479406829272851
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +134,6 @@ GameObject:
   - component: {fileID: 8013866721338300864}
   - component: {fileID: 2571325515601415797}
   - component: {fileID: 1114220500829562387}
-  - component: {fileID: 4316115918917954592}
   - component: {fileID: 5135152189811853488}
   m_Layer: 0
   m_Name: Interador_Afinado
@@ -250,27 +228,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &4316115918917954592
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 992479406829272851}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.5977093
-  m_Center: {x: 0, y: 1.0977093, z: 0}
 --- !u!114 &5135152189811853488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,6 +243,7 @@ MonoBehaviour:
   CameraPuzzleToActivate: {fileID: 0}
   player: {fileID: 0}
   puzzle: {fileID: 0}
+  inCollision: 0
 --- !u!1 &5269742128081578722
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,8 +290,6 @@ GameObject:
   - component: {fileID: 7334210594247132165}
   - component: {fileID: 2735163478710358598}
   - component: {fileID: 1730826183247982551}
-  - component: {fileID: 4868353952375980341}
-  - component: {fileID: 8430901632791069565}
   m_Layer: 0
   m_Name: Interador_Bombo
   m_TagString: FestivalPuzzle
@@ -427,37 +383,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &4868353952375980341
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8505895548103808886}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 1.5977093
-  m_Center: {x: 0, y: 1.0977093, z: 0}
---- !u!114 &8430901632791069565
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8505895548103808886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8909442ba7991a04eb0135621b8f0424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  puzzle: {fileID: 0}
