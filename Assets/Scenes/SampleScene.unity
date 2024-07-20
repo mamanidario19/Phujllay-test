@@ -24679,6 +24679,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4638345861473072604, guid: d4ba314285904f5479d78eace73f53e7, type: 3}
+      propertyPath: description
+      value: Ropa muy abrigada! esencial para las tardes en el norte!
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
