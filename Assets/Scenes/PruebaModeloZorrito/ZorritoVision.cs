@@ -7,7 +7,7 @@ public class ZorritoVision : MonoBehaviour
     public bool isWatching;
     public ZorritoNavMeshController zorritoNavMeshController;
     public GameObject MyCharacter;
-    private float distanceMaxRayCast = 15.0f;
+    private float distanceMaxRayCast = 100.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,12 +30,17 @@ public class ZorritoVision : MonoBehaviour
             {
                 isWatching = true;
                 //Debug.Log("Me esta viendo");
+                Debug.DrawRay(startPoint, directionRay, Color.green);
             }
             else
             {
                 isWatching = false;
-                //Debug.Log("No me esta viendo");
+                //Debug.LogWarning("No me esta viendo");
+                Debug.DrawRay(startPoint, directionRay, Color.red);
             }
         }
+
+        Debug.Log(MyCharacter.transform.position);
+
     }
 }

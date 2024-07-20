@@ -71,7 +71,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7374344997425490420}
-  - component: {fileID: 4955302161976606761}
   - component: {fileID: 1021542200322871552}
   m_Layer: 0
   m_Name: BomboDetected
@@ -95,29 +94,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 528262215922037773}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &4955302161976606761
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3992057578776517947}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.36461616
-  m_Height: 1.6977286
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.22783196, z: 0.13538384}
 --- !u!114 &1021542200322871552
 MonoBehaviour:
   m_ObjectHideFlags: 0

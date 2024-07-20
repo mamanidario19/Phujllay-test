@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SP_Controller : MonoBehaviour
 {
-    [SerializeField] private GameObject gameObject;
+    [SerializeField] private GameObject gameObjectSPController;
     [SerializeField] private float maxPoint;
     private SP_Slidepress point;
     private void Update() {
         
     }
     private void EnableObjects() {
-        gameObject.SetActive(false);
+        gameObjectSPController.SetActive(false);
     }
     private void CountToWin() {
         if(point.Point == maxPoint) {

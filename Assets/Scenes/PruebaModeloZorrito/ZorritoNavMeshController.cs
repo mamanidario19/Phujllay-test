@@ -178,16 +178,22 @@ public class ZorritoNavMeshController : MonoBehaviour
 
     void StopAgent()
     {
-        //Debug.Log("Me detuve");
-        agente.destination = agente.transform.position;
-        agente.isStopped = true;
-        //Track();
+        if (!zorritoVision.isWatching && TrackingStatus)
+        {
+            //Debug.Log("Me detuve");
+            agente.destination = agente.transform.position;
+            agente.isStopped = true;
+            //Track();
+        }
     }
 
     void StartSearching()
     {
-        agente.isStopped = false;
-        isSearching = true;
+        if (!zorritoVision.isWatching && TrackingStatus)
+        {
+            agente.isStopped = false;
+            isSearching = true;
+        }
     }
 
     void Track()

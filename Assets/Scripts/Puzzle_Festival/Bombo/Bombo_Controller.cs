@@ -6,7 +6,7 @@ public class Bombo_Controller : MonoBehaviour
 {
 
     [SerializeField] private int numPiece, totalPieces=1;
-    [SerializeField] private bool isInstrumentCumplete = false;
+    [SerializeField] public bool isInstrumentCumplete = false;
 
     //GET - SET
     public int NumPiece { get { return numPiece; } set { numPiece = value; } }

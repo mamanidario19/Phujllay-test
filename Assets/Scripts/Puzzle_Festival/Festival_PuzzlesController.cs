@@ -7,38 +7,61 @@ using UnityEngine;
 public class Festival_PuzzlesController : MonoBehaviour
 {
     [SerializeField] private GameObject CameraPuzzleToActivate, player, puzzle;
+    public AuthorizePlayPuzzle authorizePlayPuzzle;
+    public GameObject gameObjectTxt, interfacePuzzle, cartelSiyNo, uiGame, botonesInicioPuzzle;
+    public int numBack;
     private bool isPlaying = false;
+    public bool inCollision = false;
+    
     //[SerializeField] private GameObject player, puzzle;
 
 
     // GET -SET
     public bool IsPlaying { get { return isPlaying; } set { isPlaying = value; } }
 
-    private void OnTriggerStay(Collider other)
+    private void Awake()
+    {
+        gameObjectTxt.SetActive(true);
+        gameObjectTxt.SetActive(false);
+    }
+
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                // Disparar evento
-                InteractOn();
-            }
-            
+            inCollision = true;
+            gameObjectTxt.SetActive(true);
+            //if (Input.GetKeyDown(KeyCode.P))
+            //{
+            //    // Disparar evento
+            //    InteractOn();
+            //}            
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {            
+            inCollision = false;
+            gameObjectTxt.SetActive(false);
         }
     }
     private void InteractOn()
     {
         //Debug.Log("Entrando al puzzle ");
         isPlaying = true;
+        interfacePuzzle.SetActive(true);
         CameraPuzzleToActivate.SetActive(true);
         player.SetActive(false);
         //puzzle.SetActive(true);
     }
 
-    private void InteractOff()
+    public void InteractOff()
     {
         //Debug.Log("Saliendo del puzzle");
         isPlaying = false;
+        interfacePuzzle.SetActive(false);
         CameraPuzzleToActivate.SetActive(false);
         player.SetActive(true);
         //puzzle.SetActive(false);
@@ -48,7 +71,38 @@ public class Festival_PuzzlesController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            InteractOff();
+            KeyEscape();
+        }
+
+        if (inCollision)
+        {
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                InteractOn();
+            }
+        }
+
+        if (authorizePlayPuzzle.thisObjectActive)
+        {
+            gameObjectTxt.SetActive(false);
+        }
+    }
+
+    public void KeyEscape()
+    {
+        switch (numBack)
+        {
+            case 1:
+                botonesInicioPuzzle.SetActive(false);
+                cartelSiyNo.SetActive(true);
+                break;
+            case 2:
+                uiGame.SetActive(false);
+                cartelSiyNo.SetActive(true);
+                break;
+            case 3:
+
+                break;
         }
     }
     /*

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RockAttack : MonoBehaviour
 {
-    public GameObject rockPrefab;
+    public List<GameObject> rockPrefabs; // Lista de rocas
     public CameraShake cameraShake;
     public float dropHeight = 20f;
     public float rockSpacing = 2f;
@@ -32,7 +32,7 @@ public class RockAttack : MonoBehaviour
     public void SomeOtherFunction()
     {
         // Obtén una referencia al objeto del juego
-        GameObject myGameObject = GameObject.Find("Player"); // Cambia "NombreDeTuObjeto" por el nombre de tu objeto
+        GameObject myGameObject = GameObject.Find("Player"); // Referencia del player
 
         // Usa la posición del objeto como el centro del ataque
         Vector3 attackCenter = myGameObject.transform.position;
@@ -50,16 +50,19 @@ public class RockAttack : MonoBehaviour
     {
         for (int i = 0; i < 5; i++)
         {
-           // Calcula una posición aleatoria dentro del área de ataque
+            // Calcula una posición aleatoria dentro del área de ataque
             float randomX = Random.Range(-attackRadius, attackRadius);
             float randomZ = Random.Range(-attackRadius, attackRadius);
             Vector3 rockPosition = center + new Vector3(randomX, dropHeight, randomZ);
+            
+            // Selecciona un prefab aleatorio de la lista
+            int randomPrefabIndex = Random.Range(0, rockPrefabs.Count);
+            GameObject selectedRockPrefab = rockPrefabs[randomPrefabIndex];
+
             // Crea la roca
-            Instantiate(rockPrefab, rockPosition, Quaternion.identity);
+            Instantiate(selectedRockPrefab, rockPosition, Quaternion.identity);
             // Espera un poco antes de la próxima roca
             yield return new WaitForSeconds(0.5f);
         }
     }
-
-
 }

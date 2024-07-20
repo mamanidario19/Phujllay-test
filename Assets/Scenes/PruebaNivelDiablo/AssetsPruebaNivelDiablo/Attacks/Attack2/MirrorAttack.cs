@@ -29,7 +29,7 @@ public class MirrorAttack : MonoBehaviour
         if (Physics.Raycast(ray, out hit, rayDistance))
         {
             // Aquí puedes definir lo que sucede cuando el rayo golpea un objeto
-            //Debug.Log("El rayo de luz ha golpeado a " + hit.transform.missionName);
+            //Debug.Log("El rayo de luz ha golpeado a " + hit.transform.name);
 
             if (hit.transform.name == "Jugador")
             {

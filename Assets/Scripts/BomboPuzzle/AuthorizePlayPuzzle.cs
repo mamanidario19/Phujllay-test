@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AuthorizePlayPuzzle : MonoBehaviour
 {
+    public Festival_PuzzlesController festival_PuzzlesController;
     // Variable pública para almacenar el estado de activación
     public bool thisObjectActive;
 
@@ -11,11 +12,13 @@ public class AuthorizePlayPuzzle : MonoBehaviour
     {
         // Se llama cuando el objeto se activa
         thisObjectActive = true;
+        festival_PuzzlesController.numBack = 1;
     }
 
     private void OnDisable()
     {
         // Se llama cuando el objeto se desactiva
         thisObjectActive = false;
+        festival_PuzzlesController.numBack = 0;
     }
 }

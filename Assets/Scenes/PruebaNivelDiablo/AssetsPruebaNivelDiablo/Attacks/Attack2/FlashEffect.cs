@@ -14,7 +14,7 @@ public class FlashEffect : MonoBehaviour
 
     void Start()
     {
-        //Create the folder
+        // Crea la carpeta
         System.IO.Directory.CreateDirectory(folder);
 
         // Obtiene el Canvas Group
@@ -133,5 +133,6 @@ public class FlashEffect : MonoBehaviour
 
         // Asegura que la opacidad del flash sea 0 al finalizar
         canvasGroup.alpha = 0f;
+        DeleteAllScreenshots();
     }
 }
