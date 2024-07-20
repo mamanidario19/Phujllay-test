@@ -40,7 +40,7 @@ public class ZorritoVision : MonoBehaviour
             }
         }
 
-        Debug.Log(MyCharacter.transform.position);
+        //Debug.Log(MyCharacter.transform.position);
 
     }
 }
