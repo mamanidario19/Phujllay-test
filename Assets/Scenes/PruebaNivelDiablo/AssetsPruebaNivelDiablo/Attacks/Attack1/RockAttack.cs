@@ -21,11 +21,11 @@ public class RockAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            SomeOtherFunction();
-            cameraShake.ShakeCamera();
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    SomeOtherFunction();
+        //    cameraShake.ShakeCamera();
+        //}
     }
 
 

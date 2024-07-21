@@ -28,22 +28,37 @@ public class ParticleSpeedIncrease : MonoBehaviour
         // Comprueba si la tecla V está presionada
         if (Input.GetKeyDown(KeyCode.V))
         {
-            // Obtiene la configuración principal del sistema de partículas
-            var main = particleSystemFog.main;
+            IncreaseSpeeds();
+            //// Obtiene la configuración principal del sistema de partículas
+            //var main = particleSystemFog.main;
 
-            // Incrementa la velocidad inicial y la velocidad de simulación
-            main.startSpeedMultiplier = maxStartSpeed;
-            main.simulationSpeed = maxSimulationSpeed;
+            //// Incrementa la velocidad inicial y la velocidad de simulación
+            //main.startSpeedMultiplier = maxStartSpeed;
+            //main.simulationSpeed = maxSimulationSpeed;
         }
 
         // Comprueba si la tecla V se ha soltado
         if (Input.GetKeyUp(KeyCode.V))
         {
-            StartCoroutine(DecreaseSpeeds());
+            DecreaseSpeeds();
         }
     }
 
-    private IEnumerator DecreaseSpeeds()
+    public void IncreaseSpeeds()
+    {
+        // Obtiene la configuración principal del sistema de partículas
+        var main = particleSystemFog.main;
+
+        // Incrementa la velocidad inicial y la velocidad de simulación
+        main.startSpeedMultiplier = maxStartSpeed;
+        main.simulationSpeed = maxSimulationSpeed;
+    }
+    public void DecreaseSpeeds()
+    {
+        StartCoroutine(DecreaseSpeedFog());
+    }
+
+    private IEnumerator DecreaseSpeedFog()
     {
         var main = particleSystemFog.main;
         float t = 0;
