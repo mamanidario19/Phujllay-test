@@ -4840,7 +4840,7 @@ MonoBehaviour:
   minDirectionChangeInterval: 1
   maxDirectionChangeInterval: 3
   isActive: 0
-  hudPuzzleMoldInteraction: {fileID: 0}
+  hudPuzzleMoldInteraction: {fileID: 774961703}
 --- !u!1 &776812457
 GameObject:
   m_ObjectHideFlags: 0
