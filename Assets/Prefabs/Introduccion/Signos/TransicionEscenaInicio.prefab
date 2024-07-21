@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 4461442582961338684}
   - component: {fileID: 3149251041491604702}
   m_Layer: 5
-  m_Name: TransicionEscena
+  m_Name: TransicionEscenaInicio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
