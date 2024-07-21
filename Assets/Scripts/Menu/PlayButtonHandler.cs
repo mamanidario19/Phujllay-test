@@ -7,16 +7,20 @@ using System.Collections.Generic;
 
 public class PlayButtonHandler : MonoBehaviour
 {
-    public AudioClip clickSound;
-    public string sceneToLoad;
+    [SerializeField] private Animator animator;
+    [SerializeField] private AudioClip clickSound;
+    [SerializeField] private string sceneToLoad;
+
     private AudioSource audioSource;
 
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
+
         audioSource.clip = clickSound;
 
         Button button = GetComponent<Button>();
+
         button.onClick.AddListener(OnPlayButtonClicked);
     }
 
@@ -28,7 +32,15 @@ public class PlayButtonHandler : MonoBehaviour
     IEnumerator PlaySoundAndChangeScene()
     {
         audioSource.Play();
-        yield return new WaitForSeconds(audioSource.clip.length);
+
+        yield return new WaitForSeconds(audioSource.clip.length - 1);
+
+        animator.gameObject.SetActive(true);
+
+        animator.SetTrigger("Iniciar");
+
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+
         SceneManager.LoadScene(sceneToLoad);
     }
 }
