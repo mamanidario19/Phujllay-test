@@ -32,11 +32,11 @@ public class FlashEffect : MonoBehaviour
             isFlashActive = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            CaptureScreen();
-            //StartCoroutine(Flash());
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    CaptureScreen();
+        //    //StartCoroutine(Flash());
+        //}
 
         if (Input.GetKeyDown(KeyCode.U))
         {
@@ -49,7 +49,7 @@ public class FlashEffect : MonoBehaviour
         StartCoroutine(Flash());
     }
 
-    private void CaptureScreen()
+    public void CaptureScreen()
     {
         string name = string.Format("{0}/{1:D03} shot.png", folder, Time.frameCount);
         ScreenCapture.CaptureScreenshot(name);
@@ -77,22 +77,8 @@ public class FlashEffect : MonoBehaviour
         Texture2D screenshotTexture = new Texture2D(Screen.width, Screen.height);
         screenshotTexture.LoadImage(System.IO.File.ReadAllBytes(screenshotPath));
 
-        //// Modifica la textura para saturarla en blanco con menor intensidad
-        //float whiteIntensity = 0.5f; // Ajustar valor de intensidad
-        //for (int x = 0; x < screenshotTexture.width; x++)
-        //{
-        //    for (int y = 0; y < screenshotTexture.height; y++)
-        //    {
-        //        Color pixelColor = screenshotTexture.GetPixel(x, y);
-        //        pixelColor.r = 1f - (1f - pixelColor.r) * whiteIntensity;
-        //        pixelColor.g = 1f - (1f - pixelColor.g) * whiteIntensity;
-        //        pixelColor.b = 1f - (1f - pixelColor.b) * whiteIntensity;
-        //        screenshotTexture.SetPixel(x, y, pixelColor);
-        //    }
-        //}
-
         // Modifica la textura para saturarla en blanco con menor saturacion
-        float saturation = 0.5f; // Ajustar valor de saturacion
+        float saturation = 0.5f;
 
         Color[] pixels = screenshotTexture.GetPixels();
 

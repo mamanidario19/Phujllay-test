@@ -6,13 +6,12 @@ public class ChangeCloudDestination : MonoBehaviour
 {
     public Transform destiny;
     public Transform personaje;
-    // Start is called before the first frame update
+
     void Start()
     {
         destiny = GetComponent<Transform>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -20,7 +19,7 @@ public class ChangeCloudDestination : MonoBehaviour
 
     public void ChangeToCharacterLocation()
     {
-        destiny.transform.position = new Vector3(personaje.transform.position.x, personaje.transform.position.y + 1.5f, personaje.transform.position.z);
+        destiny.transform.position = new Vector3(personaje.transform.position.x, personaje.transform.position.y, personaje.transform.position.z);
     }
 
     public void ChangeToHomeLocation()

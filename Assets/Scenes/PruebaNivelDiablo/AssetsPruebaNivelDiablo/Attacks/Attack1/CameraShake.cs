@@ -8,18 +8,6 @@ public class CameraShake : MonoBehaviour
     public float shakeMagnitude = 4f; // Magnitud del temblor
     private Quaternion originalRotation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ShakeCamera()
     {
         originalRotation = transform.rotation;
