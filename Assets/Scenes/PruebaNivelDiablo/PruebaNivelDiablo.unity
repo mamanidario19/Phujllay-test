@@ -584,31 +584,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.556314
+      value: -28.556318
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 573.2674
+      value: 573.2671
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.542578
+      value: 18.542574
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.44579327
+      value: 0.44579434
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.15936606
+      value: -0.15936643
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.54324436
+      value: 0.54324406
       objectReference: {fileID: 0}
     - target: {fileID: 8756191741571474984, guid: 1d066374e1be4564e85173ca5f5b84c0, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.69336605
+      value: -0.6933655
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1303,7 +1303,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 213151880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.24529824, y: 0.38407803, z: -0.10661128, w: 0.883712}
+  m_LocalRotation: {x: 0.24529797, y: 0.38407925, z: -0.10661156, w: 0.8837116}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2040,7 +2040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destiny: {fileID: 0}
-  personaje: {fileID: 0}
+  personaje: {fileID: 572053432}
 --- !u!1 &289384469
 GameObject:
   m_ObjectHideFlags: 3
@@ -2112,7 +2112,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289384469}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22922604, y: 0.3859489, z: -0.09962599, w: 0.88801664}
+  m_LocalRotation: {x: 0.22922578, y: 0.38595006, z: -0.09962623, w: 0.88801616}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6245,7 +6245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495298528}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.06517301, y: -0.000064074986, z: 0.000004190951, w: -0.99787396}
+  m_LocalRotation: {x: 0.111282445, y: 0.000560131, z: -0.00006272233, w: 0.9937887}
   m_LocalPosition: {x: 0, y: 7.1, z: -15.200004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6423,7 +6423,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &531831355
 MonoBehaviour:
@@ -6902,7 +6902,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb377009ac3de3148a25e0b35dcb9725, type: 2}
+  - {fileID: 2100000, guid: 57b12505897b36e46bd58dd691bdf041, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7145,7 +7145,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.17073154, g: 0, b: 1, a: 1}
+      maxColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -8231,7 +8231,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -11719,7 +11719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeCloudDestination: {fileID: 289041199}
   destiny: {fileID: 289041198}
-  father: {fileID: 0}
+  father: {fileID: 572053432}
   son: {fileID: 289041198}
   velocidad: 0.5
 --- !u!4 &584761467
@@ -12518,8 +12518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577a029fc85e84846b31ce1deea7e152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particleSpeedIncreaseObjects:
-  - {fileID: 742645838}
+  flashEffect: {fileID: 531831358}
+  particleSpeedIncreaseInstances: []
   enemyAimConstraintController: {fileID: 742645840}
   cloudFollowCharacter: {fileID: 775413914}
   cameraShake: {fileID: 1433306253}
@@ -12936,7 +12936,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fb377009ac3de3148a25e0b35dcb9725, type: 2}
+  - {fileID: 2100000, guid: 57b12505897b36e46bd58dd691bdf041, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13179,7 +13179,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.17073154, g: 0, b: 1, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -14265,7 +14265,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 1
+    enabled: 0
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -17735,7 +17735,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeCloudDestination: {fileID: 289041199}
   destiny: {fileID: 289041198}
-  father: {fileID: 0}
+  father: {fileID: 572053432}
   son: {fileID: 289041198}
   velocidad: 0.5
 --- !u!65 &775413915
@@ -20991,8 +20991,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433306249}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26133195, y: 0.38207525, z: -0.11357982, w: 0.879104}
-  m_LocalPosition: {x: -17.129763, y: -0.71000004, z: -12.226057}
+  m_LocalRotation: {x: 0.26133165, y: 0.38207644, z: -0.113580115, w: 0.87910354}
+  m_LocalPosition: {x: -17.129768, y: -0.71000004, z: -12.226053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22610,7 +22610,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!225 &1731750681
 CanvasGroup:
@@ -23317,7 +23317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1858157113}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26133192, y: 0.38207528, z: -0.11357983, w: 0.87910396}
+  m_LocalRotation: {x: 0.26133165, y: 0.38207647, z: -0.11358012, w: 0.8791035}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -23642,7 +23642,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1.04
+    Value: 1
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -23716,7 +23716,7 @@ Transform:
   m_GameObject: {fileID: 1910868728}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.129763, y: -0.71000004, z: -12.226057}
+  m_LocalPosition: {x: -17.129768, y: -0.71000004, z: -12.226053}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

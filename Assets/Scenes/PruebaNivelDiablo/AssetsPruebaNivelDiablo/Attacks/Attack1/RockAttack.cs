@@ -10,25 +10,6 @@ public class RockAttack : MonoBehaviour
     public float rockSpacing = 2f;
     public float attackRadius = 5f;
 
-    
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //if (Input.GetKeyDown(KeyCode.H))
-        //{
-        //    SomeOtherFunction();
-        //    cameraShake.ShakeCamera();
-        //}
-    }
-
-
     public void SomeOtherFunction()
     {
         // Obtén una referencia al objeto del juego

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class EnemyInputs : MonoBehaviour
 {
-    public List<ParticleSpeedIncrease> particleSpeedIncreaseObjects = new List<ParticleSpeedIncrease>();
+    public FlashEffect flashEffect;
+    public ParticleSpeedIncrease[] particleSpeedIncreaseInstances;
     public EnemyAimConstraintController enemyAimConstraintController;
     public CloudFollowCharacter cloudFollowCharacter;
     public CameraShake cameraShake;
@@ -24,6 +25,8 @@ public class EnemyInputs : MonoBehaviour
         enemyAimConstraintController.IncreaseWeight();
 
         SetNextAttackTime();
+
+        particleSpeedIncreaseInstances = this.gameObject.GetComponentsInChildren<ParticleSpeedIncrease>();
     }
 
     void Update()
@@ -31,6 +34,11 @@ public class EnemyInputs : MonoBehaviour
         if (authorizePlayNivelDiablo.thisObjectActive)
         {
             int result;
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                flashEffect.CaptureScreen();
+            }
 
             if (Input.GetKeyDown(KeyCode.H))
             {
@@ -51,19 +59,7 @@ public class EnemyInputs : MonoBehaviour
                 // Desactiva el viento
                 windForce.DeactivateWind();
             }
-            //if (Input.GetKeyDown(KeyCode.M))
-            //{
-            //    countPulseM++;
-            //    result = countPulseM % 2;
-            //    if (result == 1)
-            //    {
-            //        enemyAimConstraintController.IncreaseWeight();
-            //    }
-            //    if (result == 0)
-            //    {
-            //        enemyAimConstraintController.DecreaseWeight();
-            //    }
-            //}
+            
             if (Input.GetKeyDown(KeyCode.C))
             {
                 countPulseC++;
@@ -89,7 +85,7 @@ public class EnemyInputs : MonoBehaviour
 
     public void ChooseRandomAttack()
     {
-        int randomAttack = Random.Range(1, 3);
+        int randomAttack = Random.Range(1, 4);
 
         switch (randomAttack)
         {
@@ -98,8 +94,12 @@ public class EnemyInputs : MonoBehaviour
                 break;
             case 2:
                 ActivateAttack2();
-                break;         
+                break;
+            case 3:
+                ActivateAttack3();
+                break;
         }
+
 
         SetNextAttackTime();
     }
@@ -120,7 +120,7 @@ public class EnemyInputs : MonoBehaviour
 
     public void ActivateAttack2()
     {
-        foreach (var particleSpeedIncrease in particleSpeedIncreaseObjects)
+        foreach (var particleSpeedIncrease in particleSpeedIncreaseInstances)
         {
             particleSpeedIncrease.IncreaseSpeeds();
         }
@@ -130,16 +130,17 @@ public class EnemyInputs : MonoBehaviour
 
     public void DesactiveAttack2()
     {
-        foreach (var particlesSpeedIncrease in particleSpeedIncreaseObjects)
+        foreach (var particlesSpeedIncrease in particleSpeedIncreaseInstances)
         {
             particlesSpeedIncrease.DecreaseSpeeds();
         }
         windForce.DeactivateWind();
     }
 
+
     public void ActivateAttack3()
     {
-
+        flashEffect.CaptureScreen();
     }
 
     public void ActivateAttack4()
