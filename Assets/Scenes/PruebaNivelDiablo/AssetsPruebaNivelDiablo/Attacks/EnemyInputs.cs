@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnemyInputs : MonoBehaviour
 {
     public List<ParticleSpeedIncrease> particleSpeedIncreaseObjects = new List<ParticleSpeedIncrease>();
-    public AuthorizePlayNivelDiablo authorizePlayNivelDiablo;
     public EnemyAimConstraintController enemyAimConstraintController;
     public CloudFollowCharacter cloudFollowCharacter;
     public CameraShake cameraShake;
@@ -13,75 +12,79 @@ public class EnemyInputs : MonoBehaviour
     public WindForce windForce; // Referencia al script WindForce
     public int countPulseM = 0;
     public int countPulseC = 0;
+    [SerializeField] private AuthorizePlayNivelDiablo authorizePlayNivelDiablo;
 
     public float minAttackInterval = 5f;
     public float maxAttackInterval = 7f;
     public float timeSinceLastAttack = 0f;
     public float nextAttackTime;
 
-    // Start is called before the first frame update
     void Start()
     {
+        enemyAimConstraintController.IncreaseWeight();
+
         SetNextAttackTime();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        int result;
+        if (authorizePlayNivelDiablo.thisObjectActive)
+        {
+            int result;
 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            rockAttack.SomeOtherFunction();
-            cameraShake.ShakeCamera();
-        }
-
-        // Comprueba si se presiona la tecla V
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            // Activa el viento
-            windForce.ActivateWind();
-        }
-
-        // Comprueba si se suelta la tecla V
-        if (Input.GetKeyUp(KeyCode.V))
-        {
-            // Desactiva el viento
-            windForce.DeactivateWind();
-        }
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            countPulseM++;
-            result = countPulseM % 2;
-            if (result == 1)
+            if (Input.GetKeyDown(KeyCode.H))
             {
-                enemyAimConstraintController.IncreaseWeight();
+                rockAttack.SomeOtherFunction();
+                cameraShake.ShakeCamera();
             }
-            if (result == 0)
-            {
-                enemyAimConstraintController.DecreaseWeight();
-            }
-        }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            countPulseC++;
-            result = countPulseC % 2;
-            if (result == 1)
-            {
-                cloudFollowCharacter.MakeSon();
-            }
-            if (result == 0)
-            {
-                cloudFollowCharacter.RemoveSon();
-            }
-        }
 
-        timeSinceLastAttack += Time.deltaTime;
+            // Comprueba si se presiona la tecla V
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                // Activa el viento
+                windForce.ActivateWind();
+            }
 
-        if (timeSinceLastAttack >= nextAttackTime)
-        {
-            ChooseRandomAttack();
-        }
+            // Comprueba si se suelta la tecla V
+            if (Input.GetKeyUp(KeyCode.V))
+            {
+                // Desactiva el viento
+                windForce.DeactivateWind();
+            }
+            //if (Input.GetKeyDown(KeyCode.M))
+            //{
+            //    countPulseM++;
+            //    result = countPulseM % 2;
+            //    if (result == 1)
+            //    {
+            //        enemyAimConstraintController.IncreaseWeight();
+            //    }
+            //    if (result == 0)
+            //    {
+            //        enemyAimConstraintController.DecreaseWeight();
+            //    }
+            //}
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                countPulseC++;
+                result = countPulseC % 2;
+                if (result == 1)
+                {
+                    cloudFollowCharacter.MakeSon();
+                }
+                if (result == 0)
+                {
+                    cloudFollowCharacter.RemoveSon();
+                }
+            }
+
+            timeSinceLastAttack += Time.deltaTime;
+
+            if (timeSinceLastAttack >= nextAttackTime)
+            {
+                ChooseRandomAttack();
+            }
+        }        
     }
 
     public void ChooseRandomAttack()
