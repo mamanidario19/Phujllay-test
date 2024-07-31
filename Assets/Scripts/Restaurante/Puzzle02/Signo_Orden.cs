@@ -8,11 +8,11 @@ public class Signo_Orden : MonoBehaviour
     [SerializeField] private float velocidadVertical = 1f;
     [SerializeField] private float distanciaVertical = 2f;
 
-    private Vector3 posicionInicial;
+    private Vector3 posicionInicialLocal;
 
     void Start()
     {
-        posicionInicial = transform.position;
+        posicionInicialLocal = transform.localPosition;
     }
 
     private void Update()
@@ -21,6 +21,6 @@ public class Signo_Orden : MonoBehaviour
 
         float desplazamiento = Mathf.Sin(Time.time * velocidadVertical) * distanciaVertical;
 
-        transform.position = posicionInicial + new Vector3(0f, desplazamiento, 0f);
+        transform.localPosition = new Vector3(posicionInicialLocal.x, posicionInicialLocal.y + desplazamiento, posicionInicialLocal.z);
     }
 }
