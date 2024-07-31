@@ -21,20 +21,12 @@ public class ControladorDatosJuego : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            CargarDatos();
-        }
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            GuardarDatos();
-        }
+        CargarDatos();
     }
 
-    private void CargarDatos()
+    public void CargarDatos()
     {
         if (File.Exists(archivoDeGuardado))
         {
@@ -52,11 +44,11 @@ public class ControladorDatosJuego : MonoBehaviour
         }
     }
 
-    private void GuardarDatos()
+    public void GuardarDatos(Transform spawn)
     {
         DatosJuego nuevosDatos = new DatosJuego()
         {
-            PosicionAparicion = jugador.transform.position,
+            PosicionAparicion = spawn.position,
         };
 
         string cadenaJSON = JsonUtility.ToJson(nuevosDatos);
