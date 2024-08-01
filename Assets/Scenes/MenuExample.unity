@@ -20,12 +20,12 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
-  m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
+  m_AmbientMode: 3
+  m_SubtractiveShadowColor: {r: 1, g: 0.9450429, b: 0.7971698, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18076672, g: 0.22628973, b: 0.3071748, a: 1}
+  m_IndirectSpecularColor: {r: 0.180767, g: 0.22629018, b: 0.3071754, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3466,8 +3466,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639085876}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.00006896437, y: 0.9990668, z: 0.043162543, w: -0.0015962917}
-  m_LocalPosition: {x: -32.61, y: -3.03, z: -6.93}
+  m_LocalRotation: {x: 0.00006146357, y: 0.9991681, z: 0.04075395, w: -0.0015069075}
+  m_LocalPosition: {x: -32.61, y: -3.03, z: -6.744}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5800,7 +5800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937237347}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.04446115, y: 0.7753458, z: 0.054930493, w: 0.62757057}
+  m_LocalRotation: {x: -0.044461146, y: 0.7753458, z: 0.0549305, w: 0.62757057}
   m_LocalPosition: {x: -25.51, y: -3.85, z: -3.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5969,7 +5969,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959074586}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.011058858, y: 0.71160716, z: 0.0112038, w: 0.7024012}
+  m_LocalRotation: {x: -0.0110588735, y: 0.71160716, z: 0.011203816, w: 0.7024012}
   m_LocalPosition: {x: 47.500004, y: 6.31, z: -96.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10608,7 +10608,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925132927}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.011058858, y: 0.71160716, z: 0.0112038, w: 0.7024012}
+  m_LocalRotation: {x: -0.0110588735, y: 0.71160716, z: 0.011203816, w: 0.7024012}
   m_LocalPosition: {x: -20.8, y: -0.29, z: -3.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

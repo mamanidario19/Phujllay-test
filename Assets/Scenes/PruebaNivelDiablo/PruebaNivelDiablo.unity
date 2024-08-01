@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.009411341, g: 0.008063456, b: 0.0059163063, a: 1}
+  m_IndirectSpecularColor: {r: 0.009411343, g: 0.008063463, b: 0.0059162937, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11965,6 +11965,93 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8729369296439856808, guid: 2b882e9c5be326549956df00cad52587, type: 3}
   m_PrefabInstance: {fileID: 301967466}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &635980355
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.834827
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.6770139
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -10.583701
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776199334346731856, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776199334346731856, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_fontSize
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776199334346731856, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3288157354241432186, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: mensaje
+      value: "Llegaste Rumi! a la punta del cerro.. por favor continua y ten cuidado!
+        El diablo intentara sacarte de aqui!. C\xFAbrete del viento con las paredes,
+        esquiva las rocas que tira y alejate de la nube!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4610397946819662675, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_Name
+      value: Area_Mensaje_Instrucciones Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_text
+      value: '-'
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_fontSize
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 25
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
 --- !u!4 &636797582 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5519722510425405039, guid: 2b882e9c5be326549956df00cad52587, type: 3}
@@ -25323,3 +25410,4 @@ SceneRoots:
   - {fileID: 495298531}
   - {fileID: 1910868730}
   - {fileID: 242454882}
+  - {fileID: 635980355}
