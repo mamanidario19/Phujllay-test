@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1971,6 +1971,72 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1001 &161433877
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.0076964
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.09351063
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.8592737
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046964227414778412, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_Name
+      value: Area_Mensaje_Instrucciones
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314344769271408667, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: nombre
+      value: Torno de Arcilla
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314344769271408667, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: descripcion
+      value: Ayuda a Rumi a moldear arcilla! mantente en la zona verde hasta que
+        el jarron se complete!. Apreta la tecla A y D.
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
 --- !u!1 &192727483
 GameObject:
   m_ObjectHideFlags: 0
@@ -8027,145 +8093,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 127549399}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1457649188
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2.0076964
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.09351063
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3.8592737
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3288157354241432186, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: mensaje
-      value: Ayuda a Rumi a moldear arcilla! mantente en la zona verde hasta que
-        el jarron se complete!. Apreta la tecla A y D.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610397946819662675, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_Name
-      value: Area_Mensaje_Instrucciones Variant
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_text
-      value: Ayuda a Rumi a moldear arcilla! mantente en la zona verde hasta que
-        el jarron se complete!. Apreta la tecla A y D.
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_fontSize
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_margin.w
-      value: -54.234604
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_margin.y
-      value: 4.3960876
-      objectReference: {fileID: 0}
-    - target: {fileID: 4629804478504092678, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765187763578310410, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -501.022
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765187763578310410, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 294.383
-      objectReference: {fileID: 0}
-    - target: {fileID: 4765187763578310410, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 169.08
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -60.158
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: -198.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.93813
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.93813
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.93813
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.799988
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 12.457001
-      objectReference: {fileID: 0}
-    - target: {fileID: 7098229058596233301, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7098229058596233301, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: aff0fd6b0d65095448331e9368f4339a, type: 3}
-    - target: {fileID: 7098229058596233301, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124283991757809823, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
 --- !u!1 &1479947901
 GameObject:
   m_ObjectHideFlags: 0
@@ -9009,77 +8936,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1001 &1617629801
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.7800756
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.14011121
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 4.457889
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2354030063982900411, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3288157354241432186, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: mensaje
-      value: "Debes ayudar a ensamblar las artesan\xEDas! replica el icono que esta
-        a la izquierda navegando con los botones, cuando lo tengas listo clickea
-        la tilde!"
-      objectReference: {fileID: 0}
-    - target: {fileID: 4610397946819662675, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_Name
-      value: Area_Mensaje_Instrucciones Variant (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 4.799988
-      objectReference: {fileID: 0}
-    - target: {fileID: 6574098240279405718, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 12.457001
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: bd91d247e38782c459515410fc1b9e0c, type: 3}
 --- !u!1 &1642427506
 GameObject:
   m_ObjectHideFlags: 3
@@ -9542,6 +9398,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1708882025}
   m_CullTransparentMesh: 1
+--- !u!1001 &1723993028
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6.7800756
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.14011121
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 4.457889
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 180280897820879462, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046964227414778412, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: m_Name
+      value: Area_Mensaje_Instrucciones (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314344769271408667, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: nombre
+      value: Ensamble
+      objectReference: {fileID: 0}
+    - target: {fileID: 5314344769271408667, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
+      propertyPath: descripcion
+      value: "Debes ayudar a ensamblar las artesan\xEDas! replica el icono que esta
+        a la izquierda navegando con los botones, cuando lo tengas listo clickea
+        la tilde!"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: da7928ac861a0fd4eaa144013c7259a0, type: 3}
 --- !u!1 &1726145813
 GameObject:
   m_ObjectHideFlags: 0
@@ -11045,8 +10968,8 @@ SceneRoots:
   - {fileID: 525658116}
   - {fileID: 2109736522}
   - {fileID: 1313214545}
-  - {fileID: 1457649188}
-  - {fileID: 1617629801}
   - {fileID: 582130814}
   - {fileID: 606650982}
   - {fileID: 754987282}
+  - {fileID: 161433877}
+  - {fileID: 1723993028}
